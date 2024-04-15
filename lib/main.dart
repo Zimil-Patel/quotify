@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:quotify/utils/theme/dark_theme.dart';
+import 'package:quotify/utils/theme/light_theme.dart';
+import 'package:quotify/view/home%20screen/home_screen.dart';
 
 void main(){
   runApp(const QuotifyApp());
@@ -11,7 +14,11 @@ class QuotifyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
+      debugShowCheckedModeBanner: false,
+      theme: lightTheme,
+      darkTheme: darkTheme,
+      themeMode: ThemeMode.system,
+      home: const HomeScreen(),
     );
   }
 }
