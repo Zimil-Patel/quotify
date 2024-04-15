@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 
 //DARK THEME DATA
 ThemeData darkTheme = ThemeData(
+  scaffoldBackgroundColor: const Color(0xff22252a),
   brightness: Brightness.dark,
   //TEXT DATA
   textTheme: const TextTheme(
+    displayLarge: TextStyle(
+        fontSize: 12,
+        color: Colors.blue
+    ),
     bodyMedium: TextStyle(
           color: Color(0xff9d9fa1)
       ),
