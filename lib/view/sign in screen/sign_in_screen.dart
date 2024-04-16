@@ -50,9 +50,9 @@ class _SignInScreenState extends State<SignInScreen> {
                 textFormField(context: context,controller: dumy ,errorText: 'Please Enter valid email!', hintText: 'Email', iconData: CupertinoIcons.mail, textInputType: TextInputType.emailAddress),
                 textFormField(context: context,controller: dumy ,errorText: 'Please Enter valid password!', hintText: 'Password', iconData: CupertinoIcons.padlock, textInputType: TextInputType.text),
 
-                //SIGNIN BUTTON
+                //SIGN IN BUTTON
                 Padding(
-                  padding: const EdgeInsets.only(top: 50.0, bottom: 20),
+                  padding: const EdgeInsets.only(top: 100.0, bottom: 20),
                   child: Center(
                     child: CupertinoButton(
                       onPressed: (){},
@@ -61,7 +61,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         width: width! / 1.5,
                         decoration: BoxDecoration(
                           color:Theme.of(context).colorScheme.secondary,
-                          borderRadius: BorderRadius.all(Radius.circular(40)),
+                          borderRadius: const BorderRadius.all(Radius.circular(40)),
                         ),
                         child: Center(
                             child: Text(
@@ -73,7 +73,8 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                 ),
 
-                //SIGNUP JUST LOGIN
+
+                //SIGNUP TEXT BUTTON
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -81,6 +82,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     CupertinoButton(
                         padding: EdgeInsets.zero,
                         onPressed: () {
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const SignUpScreen(),));
                         },
                         child: Text('Sign Up',style:TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color: Theme.of(context).colorScheme.secondary,),))
                   ],
