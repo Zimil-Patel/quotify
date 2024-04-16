@@ -1,20 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../sign_up_screen.dart';
+import '../../sign up screen/sign_up_screen.dart';
 
-Column textFieldColumn({
-  required BuildContext context,
-}) {
+Column signInTextFieldColumn({required BuildContext context}) {
   return Column(
     children: [
-      textFormField(
-          context: context,
-          controller: dumy,
-          errorText: 'Please Enter valid name!',
-          hintText: 'Name',
-          iconData: CupertinoIcons.person,
-          textInputType: TextInputType.text),
       textFormField(
           context: context,
           controller: dumy,
@@ -28,15 +19,8 @@ Column textFieldColumn({
           errorText: 'Please Enter valid password!',
           hintText: 'Password',
           iconData: CupertinoIcons.padlock,
-          textInputType: TextInputType.text),
-      textFormField(
-        context: context,
-        controller: dumy,
-        errorText: 'Please Enter valid password!',
-        hintText: 'Confirm password',
-        iconData: CupertinoIcons.padlock,
-        textInputType: TextInputType.visiblePassword,
-        textInputAction: TextInputAction.done,
+          textInputType: TextInputType.text,
+          textInputAction: TextInputAction.done,
       ),
     ],
   );

@@ -5,7 +5,7 @@ import '../../../utils/global_variables.dart';
 
 Padding signInButton({required BuildContext context}) {
   return Padding(
-    padding: const EdgeInsets.only(top: 50.0, bottom: 20),
+    padding: const EdgeInsets.only(top: 100.0, bottom: 20),
     child: Center(
       child: CupertinoButton(
         onPressed: () {},
@@ -18,7 +18,7 @@ Padding signInButton({required BuildContext context}) {
           ),
           child: Center(
               child: Text(
-            'Sign Up',
+            'Sign In',
             style: TextStyle(
               color: Theme.of(context).colorScheme.primary,
             ),

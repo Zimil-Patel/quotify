@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../sign in screen/sign_in_screen.dart';
+import '../../sign up screen/sign_up_screen.dart';
 
-Row signInTextButton({required BuildContext context}) {
+Row signUpTextButton({required BuildContext context}) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
       Text(
-        'Already have a create account ? ',
+        'Don’t have an account ? ',
         style: Theme.of(context).textTheme.titleSmall,
       ),
       CupertinoButton(
@@ -17,11 +17,11 @@ Row signInTextButton({required BuildContext context}) {
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const SignInScreen(),
+                  builder: (context) => const SignUpScreen(),
                 ));
           },
           child: Text(
-            'Sign In',
+            'Sign Up',
             style: TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.w500,
