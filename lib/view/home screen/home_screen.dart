@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Column(
               children: [
-                Text('hello')
+                Text('akshar patel')
               ],
             )
           ],
