@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 //LIGHT THEME DATA
@@ -6,25 +7,25 @@ ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
   //TEXT DATA
   textTheme: const TextTheme(
-    displayLarge: TextStyle(
-      fontSize: 12,
-      color: Colors.blue
-    ),
-    bodyMedium: TextStyle(
-        color: Color(0xff9d9fa1)
-    ),
+    titleMedium: TextStyle(
+      color: CupertinoColors.white,
+      fontWeight: FontWeight.bold
+    ),//FOR BOX TITLE
     titleLarge: TextStyle(
-        color: Colors.white,
+        color: CupertinoColors.black,
         fontWeight: FontWeight.w900
-    ),
+    ),// FOR TITLE
+    titleSmall: TextStyle(
+      color: Color(0xff141b25),
+      fontWeight: FontWeight.w300
+    ),//FOR CATEGORY NAME
+    bodyMedium: TextStyle(
+      color: CupertinoColors.black,
+      fontWeight: FontWeight.w700
+    ), //FOR YOU
   ),
-
-
   colorScheme: const ColorScheme.light(
-    primary: Color(0xffffffff),
-    secondary: Color(0xffffffff),
-    surface: Color(0xff22252a),
-    onSurface: Colors.white,
-    shadow: Colors.black26,
+    primary: CupertinoColors.white,
+    surface: Color(0xffd4d6dc),
   ),
 );
