@@ -8,22 +8,17 @@ ThemeData lightTheme = ThemeData(
   //TEXT DATA
   textTheme: const TextTheme(
     titleMedium: TextStyle(
-      color: CupertinoColors.white,
-      fontWeight: FontWeight.bold
-    ),//FOR BOX TITLE
+        color: CupertinoColors.white,
+        fontWeight: FontWeight.bold), //FOR BOX TITLE
     titleLarge: TextStyle(
-        color: CupertinoColors.black,
-        fontWeight: FontWeight.w900
-    ),// FOR TITLE
+        color: CupertinoColors.black, fontWeight: FontWeight.w900), // FOR TITLE
     titleSmall: TextStyle(
-      color: Color(0xff141b25),
-      fontWeight: FontWeight.w300
-    ),//FOR CATEGORY NAME
+        color: Color(0xff141b25),
+        fontWeight: FontWeight.w300), //FOR CATEGORY NAME
     bodyMedium: TextStyle(
-      color: CupertinoColors.black,
-      fontWeight: FontWeight.w700
-    ), //FOR YOU
+        color: CupertinoColors.black, fontWeight: FontWeight.w700), //FOR YOU
   ),
+
   colorScheme: const ColorScheme.light(
     primary: CupertinoColors.white,
     surface: Color(0xffd4d6dc),
