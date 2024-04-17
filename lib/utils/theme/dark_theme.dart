@@ -1,31 +1,29 @@
+//DARK THEME DATA
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-//DARK THEME DATA
 ThemeData darkTheme = ThemeData(
-  scaffoldBackgroundColor: const Color(0xff22252a),
+  scaffoldBackgroundColor: const Color(0xff242d3c),
   brightness: Brightness.dark,
   //TEXT DATA
   textTheme: const TextTheme(
-    displayLarge: TextStyle(
-        fontSize: 12,
-        color: Colors.blue
-    ),
-    bodyMedium: TextStyle(
-          color: Color(0xff9d9fa1)
-      ),
+    titleMedium: TextStyle(
+        color: Color(0xff141b25), fontWeight: FontWeight.bold), //FOR BOX TITLE
     titleLarge: TextStyle(
-        color: Colors.white,
-        fontWeight: FontWeight.w900
-    ),
+        color: CupertinoColors.white, fontWeight: FontWeight.w900), // FOR TITLE
+    titleSmall: TextStyle(
+        color: CupertinoColors.white,
+        fontWeight: FontWeight.w300), //FOR CATEGORY NAME
+    bodyMedium: TextStyle(
+        color: CupertinoColors.white, fontWeight: FontWeight.w700),
+    bodySmall: TextStyle(
+        color: Color(0xffd4d6dc), fontWeight: FontWeight.w700),
+    //FOR YOU
   ),
-
-
   colorScheme: const ColorScheme.dark(
-    primary: Color(0xff22252a),
-    secondary: Color(0xff2d3035),
-    surface: Color(0xff3d3f44),
-    onSurface: Colors.black,
-    shadow: Colors.black26,
+    primary: Color(0xff242d3c),
+    secondary: CupertinoColors.white,
+    surface: Color(0xff344050),
+    onSurface: Colors.white,
   ),
 );
-
