@@ -34,7 +34,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 textFieldColumn(context: context),
 
                 //SIGNUP BUTTON
-                signInButton(context: context),
+                signUpButton(context: context),
 
                 //SIGN IN TEXT BUTTON
                 signInTextButton(context: context),

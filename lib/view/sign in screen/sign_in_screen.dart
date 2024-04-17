@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../utils/global_variables.dart';
-import '../sign up screen/components/sign_up_button.dart';
+import 'components/sign_in_button.dart';
 import 'components/sign_in_text_filed_column.dart';
 import 'components/sign_in_top_stuff.dart';
 import 'components/sign_up_text_button.dart';

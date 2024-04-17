@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../../../utils/global_variables.dart';
 
 Column signInTopStuff({required BuildContext context}) {
   return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Padding(
         padding: const EdgeInsets.symmetric(vertical: 20.0),

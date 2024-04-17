@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../utils/global_variables.dart';
 
-Padding signInButton({required BuildContext context}) {
+Padding signUpButton({required BuildContext context}) {
   return Padding(
     padding: const EdgeInsets.only(top: 50.0, bottom: 20),
     child: Center(
