@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-List ProfileList=[
+List profileList=[
   {
     'name': 'General',
     'icon':CupertinoIcons.gear,
@@ -18,7 +18,7 @@ List ProfileList=[
     'icon':CupertinoIcons.square_grid_2x2,
   },
 ];
-List ProfileList1=[
+List profileList1=[
   {
     'name': 'Collections',
     'icon': CupertinoIcons.collections,
