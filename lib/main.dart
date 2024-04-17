@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:quotify/utils/theme/dark_theme.dart';
 import 'package:quotify/utils/theme/light_theme.dart';
-import 'package:quotify/view/sign%20in%20screen/sign_in_screen.dart';
+import 'package:quotify/view/home%20screen/home_screen.dart';
 
 void main(){
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     systemNavigationBarColor: Colors.black12, // navigation bar color
     statusBarColor: Colors.black12, // status bar color
   ));
@@ -23,7 +23,7 @@ class QuotifyApp extends StatelessWidget {
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: ThemeMode.system,
-      home: SignInScreen(),
+      home: const HomeScreen(),
     );
   }
 }
