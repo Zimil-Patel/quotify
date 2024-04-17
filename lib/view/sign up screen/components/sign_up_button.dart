@@ -19,9 +19,7 @@ Padding signUpButton({required BuildContext context}) {
           child: Center(
               child: Text(
             'Sign Up',
-            style: TextStyle(
-              color: Theme.of(context).colorScheme.primary,
-            ),
+            style: Theme.of(context).textTheme.titleMedium,
           )),
         ),
       ),

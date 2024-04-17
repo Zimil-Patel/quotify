@@ -19,9 +19,7 @@ Padding signInButton({required BuildContext context}) {
           child: Center(
               child: Text(
             'Sign In',
-            style: TextStyle(
-              color: Theme.of(context).colorScheme.primary,
-            ),
+            style: Theme.of(context).textTheme.titleMedium,
           )),
         ),
       ),
