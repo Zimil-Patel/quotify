@@ -30,7 +30,7 @@ class QuotifyApp extends StatelessWidget {
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: ThemeMode.system,
-      home: CategoryScreen(),
+      home: SignUpScreen(),
     );
   }
 }
