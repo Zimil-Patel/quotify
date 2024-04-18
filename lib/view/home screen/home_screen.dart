@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:quotify/utils/global_variables.dart';
+
+import 'components/ bottom_button_box.dart';
+import 'components/bottom_navigation.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -15,122 +19,63 @@ class _HomeScreenState extends State<HomeScreen> {
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surface,
-      body: Column(
+      //backgroundColor: Theme.of(context).colorScheme.surface,
+      body: Stack(
         children: [
-          Stack(
-            alignment: Alignment.bottomCenter,
-            children: [
-              SizedBox(
-                height: height,
-                width: width,
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Icon(
-                        CupertinoIcons.share_up,
-                        size: 50,
-                      ),
-                      Icon(
+          PageView(
+            reverse: true,
+            padEnds: false,
+            scrollDirection: Axis.vertical,
+            children: List.generate(
+                reel.length,
+                (index) => Container(
+                      height: height,
+                      width: width,
+                      color: reel[index],
+                    )),
+          ),
+          const Padding(
+            padding: EdgeInsets.only(bottom: 150),
+            child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 100),
+                      child: Icon(
                         CupertinoIcons.heart,
-                        size: 50,
+                        size: 55,
                       ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 100,
-                  ),
-                  SizedBox(
-                    height: 70,
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 15),
-                          child: CupertinoButton(
-                            padding: EdgeInsets.zero,
-                            pressedOpacity: 0.8,
-                            onPressed: () {},
-                            child: bottomBox(
-                                context: context,
-                                h1: 60,
-                                w1: 150,
-                                i1: CupertinoIcons.square_grid_2x2,
-                                t1: '  General'),
-                          ),
-                        ),
-                        const Spacer(),
-                        Padding(
-                            padding: const EdgeInsets.only(right: 15),
-                            child: CupertinoButton(
-                              padding: EdgeInsets.zero,
-                              pressedOpacity: 0.8,
-                              onPressed: () {},
-                              child: bottomBox(
-                                  context: context,
-                                  h1: 60,
-                                  w1: 60,
-                                  i1: CupertinoIcons.paintbrush,
-                                  t1: ''),
-                            )),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 10),
-                          child: CupertinoButton(
-                            padding: EdgeInsets.zero,
-                            pressedOpacity: 0.8,
-                            onPressed: () {},
-                            child: bottomBox(
-                                context: context,
-                                h1: 60,
-                                w1: 60,
-                                i1: Icons.person_2_outlined,
-                                t1: ''),
-                          ),
-                        ),
-                      ],
                     ),
-                  ),
-                ],
-              ),
-            ],
-          )
+                    Padding(
+                      padding: EdgeInsets.only(right: 100),
+                      child: Icon(
+                        CupertinoIcons.share,
+                        size: 55,
+                      ),
+                    ),
+                  ],
+                )),
+          ),
+          Align(
+              alignment: Alignment.bottomCenter,
+              child: bottomNavigationBox(context)),
+          // buildSizedBox(
+          //   h1: 100,
+          // ),
         ],
       ),
     );
   }
 }
 
-Widget bottomBox(
-    {required double h1,
-      required double w1,
-      required BuildContext context,
-      required IconData i1,
-      String? t1}) {
-  return Container(
-    height: h1,
-    width: w1,
-    decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.secondary,
-        borderRadius: BorderRadius.circular(15)),
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(
-          i1,
-          size: 30,
-          color: Theme.of(context).colorScheme.surface,
-        ),
-        Text(
-          "$t1",
-          style: Theme.of(context)
-              .textTheme
-              .titleMedium!
-              .copyWith(fontSize: 18, fontWeight: FontWeight.w400),
-        ),
-      ],
-    ),
-  );
-}
+List<Color> reel = [
+  Colors.green,
+  Colors.red,
+  Colors.blue,
+  Colors.yellow,
+  Colors.grey,
+  Colors.blueGrey,
+  Colors.purple,
+];

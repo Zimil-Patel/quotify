@@ -7,18 +7,19 @@ ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
   //TEXT DATA
   textTheme: const TextTheme(
-    titleMedium: TextStyle(
-        color: CupertinoColors.white,
-        fontWeight: FontWeight.bold), //FOR BOX TITLE
-    titleLarge: TextStyle(
-        color: CupertinoColors.black, fontWeight: FontWeight.w900), // FOR TITLE
-    titleSmall: TextStyle(
-        color: Color(0xff141b25),
-        fontWeight: FontWeight.w300), //FOR CATEGORY NAME
-    bodyMedium: TextStyle(
-        color: CupertinoColors.black, fontWeight: FontWeight.w700),
+    titleMedium:
+        TextStyle(color: CupertinoColors.white, fontWeight: FontWeight.bold),
+    //FOR BOX TITLE
+    titleLarge:
+        TextStyle(color: CupertinoColors.black, fontWeight: FontWeight.w900),
+    // FOR TITLE
+    titleSmall:
+        TextStyle(color: Color(0xff141b25), fontWeight: FontWeight.w300),
+    //FOR CATEGORY NAME
+    bodyMedium:
+        TextStyle(color: CupertinoColors.black, fontWeight: FontWeight.w700),
     bodySmall: TextStyle(
-        color: Color(0xff242d3c), fontWeight: FontWeight.w700),//FOR YOU
+        color: Color(0xff242d3c), fontWeight: FontWeight.w700), //FOR YOU
   ),
 
   colorScheme: const ColorScheme.light(
