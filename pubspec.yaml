@@ -65,6 +65,7 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
+    - assets/imges/intro imges/
     - assets/project/affirmation/
     - assets/project/broken/
     - assets/project/deep/
