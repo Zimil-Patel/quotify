@@ -1,10 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'package:flutter/widgets.dart';
 import 'package:quotify/utils/global_variables.dart';
-
-
 import 'components/ bottom_button_box.dart';
 import 'components/bottom_navigation.dart';
 
