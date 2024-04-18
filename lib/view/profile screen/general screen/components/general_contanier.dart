@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../utils/global_variables.dart';
+import '../../../../utils/global_variables.dart';
+
 
 Padding GeneralContainer(
     BuildContext context, int index, String name, IconData icon, int length) {

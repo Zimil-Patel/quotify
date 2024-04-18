@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:quotify/utils/global%20list/profile_list.dart';
 import 'package:quotify/utils/global_variables.dart';
-import 'package:quotify/view/general%20screen/general_screen.dart';
-
-import 'components/Setting_contanier.dart';
+import 'package:quotify/view/profile%20screen/added%20screen/added_screen.dart';
+import 'package:quotify/view/profile%20screen/collection%20screen/collection_screen.dart';
+import 'package:quotify/view/profile%20screen/past%20quotes%20screen/past_quotes_screen.dart';
+import 'package:quotify/view/profile%20screen/widgets%20screen/widgets_screen.dart';
+import 'app icon/app_icon_screen.dart';
+import 'components/setting_contanier.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -57,7 +60,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 (index) => CupertinoButton(
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => GeneralScreen(),
+                      builder: (context) => WidgetsScreen(),
                     ));
                   },
                   padding: EdgeInsets.zero,
@@ -78,7 +81,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
               children: List.generate(
                 profileList1.length,
                 (index) => CupertinoButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => PastQuotesScreen()));
+                  },
                   padding: EdgeInsets.zero,
                   child: settingContainer(context, index,
                       profileList1[index]['name'], profileList1[index]['icon']),
