@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../../utils/global_variables.dart';
 import 'componets/them_title.dart';
 
@@ -24,9 +23,8 @@ class _ThemeScreenState extends State<ThemeScreen> {
             children: [
               ThemeTitle(context),
               SizedBox(height: 20,),
-
-              title_name(context,name: 'Most Popular !'),
-              category_grid_box(10,name: 'affirmation'),
+              title_name(context,name: 'Plan Background'),
+              category_grid_box(10,name: 'color'),
               title_name(context,name: 'Most Popular !'),
               category_grid_box(10,name: 'affirmation'),
               title_name(context,name: 'Broken'),
@@ -63,6 +61,5 @@ class _ThemeScreenState extends State<ThemeScreen> {
       ),
     );
   }
-
 }
 

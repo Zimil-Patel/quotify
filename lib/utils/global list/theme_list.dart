@@ -1,6 +1,22 @@
+import 'dart:ui';
+
 Map image =
   {
-
+    "color":[
+      Color(0xff7fbffd),
+      Color(0xfffff38d),
+      Color(0xff57646d),
+      Color(0xff577048),
+      Color(0xff9bbaaa),
+      Color(0xff9aafa0),
+      Color(0xfff89e6c),
+      Color(0xffa6e4b3),
+      Color(0xffc9fff5),
+      Color(0xffbfe0ff),
+      Color(0xff97dafc),
+      Color(0xff031d1c),
+      Color(0xff445b6f),
+    ],
     "affirmation": [
       'assets/project/affirmation/image1.jpeg',
       'assets/project/affirmation/image2.jpeg',

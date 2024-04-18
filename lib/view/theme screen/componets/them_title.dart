@@ -56,9 +56,9 @@ Padding category_grid_box(int c,{required String name}) {
                 right: index == 9 ? 10 : 1.5),
             alignment: Alignment.center,
             decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.surface,
+                color:(name=='color')?image[name][index]: Theme.of(context).colorScheme.surface,
                 borderRadius: BorderRadius.circular(15),
-              image: DecorationImage(image: AssetImage(image[name][index]),fit: BoxFit.cover)
+              image: DecorationImage(image:(name=='color')? AssetImage(''):AssetImage(image[name][index]),fit: BoxFit.cover)
             ),
           );
         },
