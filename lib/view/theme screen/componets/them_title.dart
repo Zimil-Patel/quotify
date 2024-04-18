@@ -5,15 +5,30 @@ import 'package:flutter/material.dart';
 import 'package:quotify/utils/global%20list/theme_list.dart';
 import 'package:quotify/utils/global_variables.dart';
 
-Widget ThemeTitle(BuildContext context) {
-  return Row(
-    children: [
-      SizedBox(width: 20,),
-      Icon(CupertinoIcons.clear),
-      SizedBox(width: 20,),
-
-      Text('Themes',style:Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: 30,fontWeight: FontWeight.w500),),
-    ],
+Widget themeTitle(BuildContext context) {
+  return Padding(
+    padding: const EdgeInsets.only(top: 60, left: 15),
+    child: Row(
+      children: [
+        IconButton(
+          onPressed: (){
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            CupertinoIcons.clear,
+            size: 28,
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 20),
+          child: Text('Themes',
+              style: Theme.of(context)
+                  .textTheme
+                  .titleLarge!
+                  .copyWith(fontSize: 30, fontWeight: FontWeight.w600)),
+        ),
+      ],
+    ),
   );
 }
 

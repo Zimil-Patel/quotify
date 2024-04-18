@@ -23,30 +23,28 @@ class _ProfileScreenState extends State<ProfileScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-        Padding(
-        padding: const EdgeInsets.only(top: 60, left: 15),
-        child: Row(
-          children: [
-            IconButton(
-              onPressed: (){
-                Navigator.pop(context);
-              },
-              icon: const Icon(
-                CupertinoIcons.clear,
-                size: 28,
+            Padding(
+              padding: const EdgeInsets.only(top: 60, left: 15),
+              child: Row(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(
+                      CupertinoIcons.clear,
+                      size: 28,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: Text('Profile',
+                        style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                            fontSize: 30, fontWeight: FontWeight.w600)),
+                  ),
+                ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20),
-              child: Text('Motivation',
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge!
-                      .copyWith(fontSize: 30, fontWeight: FontWeight.w600)),
-            ),
-          ],
-        ),
-      ),
             Padding(
               padding: const EdgeInsets.only(top: 20, left: 20, bottom: 10),
               child: Text('Settings',
@@ -58,16 +56,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Column(
               children: List.generate(
                 profileList.length,
-                (index) => CupertinoButton(
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => WidgetsScreen(),
-                    ));
-                  },
-                  padding: EdgeInsets.zero,
-                  child: settingContainer(context, index,
-                      profileList[index]['name'], profileList[index]['icon']),
-                ),
+                (index) => settingContainer(context, index,
+                    profileList[index]['name'], profileList[index]['icon'], true),
               ),
             ),
             Padding(
@@ -81,15 +71,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Column(
               children: List.generate(
                 profileList1.length,
-                (index) => CupertinoButton(
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => PastQuotesScreen()));
-                  },
-                  padding: EdgeInsets.zero,
-                  child: settingContainer(context, index,
-                      profileList1[index]['name'], profileList1[index]['icon']),
-                ),
+                (index) => settingContainer(context, index,
+                    profileList1[index]['name'], profileList1[index]['icon'], false),
               ),
             ),
           ],

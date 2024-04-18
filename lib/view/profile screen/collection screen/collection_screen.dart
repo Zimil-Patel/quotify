@@ -21,21 +21,30 @@ class _CollectionScreenState extends State<CollectionScreen> {
           Row(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 70, left: 20),
-                child: Icon(CupertinoIcons.arrow_left,
-                    color: Theme.of(context).colorScheme.onSurface),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 60, left: 20),
-                child: Text(
-                  'Collections',
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge!
-                      .copyWith(fontSize: 28, fontWeight: FontWeight.w700),
+                padding: const EdgeInsets.only(top: 60, left: 15),
+                child: Row(
+                  children: [
+                    IconButton(
+                      onPressed: (){
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(
+                        CupertinoIcons.clear,
+                        size: 28,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20),
+                      child: Text('Collection',
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleLarge!
+                              .copyWith(fontSize: 30, fontWeight: FontWeight.w600)),
+                    ),
+                  ],
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Padding(
                 padding: const EdgeInsets.only(top: 60, right: 20),
                 child: Text(
@@ -43,7 +52,7 @@ class _CollectionScreenState extends State<CollectionScreen> {
                   style: Theme.of(context)
                       .textTheme
                       .titleLarge!
-                      .copyWith(fontSize: 18, fontWeight: FontWeight.w400),
+                      .copyWith(fontSize: 16, fontWeight: FontWeight.w400),
                 ),
               ),
             ],

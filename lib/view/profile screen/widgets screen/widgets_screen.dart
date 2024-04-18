@@ -19,24 +19,29 @@ class _WidgetsScreenState extends State<WidgetsScreen> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 70, left: 20),
-                child: Icon(CupertinoIcons.arrow_left,
-                    color: Theme.of(context).colorScheme.onSurface),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 60, left: 20),
-                child: Text(
-                  'Widgets',
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge!
-                      .copyWith(fontSize: 28, fontWeight: FontWeight.w700),
+          Padding(
+            padding: const EdgeInsets.only(top: 60, left: 15),
+            child: Row(
+              children: [
+                IconButton(
+                  onPressed: (){
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(
+                    CupertinoIcons.clear,
+                    size: 28,
+                  ),
                 ),
-              ),
-            ],
+                Padding(
+                  padding: const EdgeInsets.only(left: 20),
+                  child: Text('Widgets',
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleLarge!
+                          .copyWith(fontSize: 30, fontWeight: FontWeight.w600)),
+                ),
+              ],
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 30, left: 20, bottom: 10),

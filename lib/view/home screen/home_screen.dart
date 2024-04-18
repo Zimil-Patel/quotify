@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:quotify/utils/global_variables.dart';
-import 'components/ bottom_button_box.dart';
 import 'components/bottom_navigation.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -13,7 +11,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   final PageController _controller = PageController();
 
   @override
@@ -33,15 +30,13 @@ class _HomeScreenState extends State<HomeScreen> {
           PageView(
             onPageChanged: (value) => pageViewIndex = value,
             scrollDirection: Axis.vertical,
-            children: List.generate(
-                reel.length,
-                    (index) {
-                  return Container(
-                    height: height,
-                    width: width,
-                    color: reel[index],
-                  );
-                }),
+            children: List.generate(reel.length, (index) {
+              return Container(
+                height: height,
+                width: width,
+                color: reel[index],
+              );
+            }),
           ),
           const Padding(
             padding: EdgeInsets.only(bottom: 150),
@@ -75,7 +70,6 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 }
-
 
 List<Color> reel = [
   Colors.green,

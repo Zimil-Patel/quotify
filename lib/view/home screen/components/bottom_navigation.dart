@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quotify/view/category%20screen/category_screen.dart';
 import 'package:quotify/view/profile%20screen/profile_screen.dart';
+import 'package:quotify/view/theme%20screen/theme_screen.dart';
 
 import ' bottom_button_box.dart';
 import '../../../utils/global_variables.dart';
@@ -50,7 +51,9 @@ Widget bottomNavigationBox(
               child: CupertinoButton(
                 padding: EdgeInsets.zero,
                 pressedOpacity: 0.8,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const ThemeScreen(),));
+                },
                 child: bottomBox(
                     context: context,
                     height: height! / 14,
