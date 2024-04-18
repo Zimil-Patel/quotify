@@ -26,7 +26,7 @@ List generalList = [
 List forYouList = [
   {
     'name':'Motivation',
-    'icon': CupertinoIcons.text_quote,
+    'icon': CupertinoIcons.book,
   },
   {
     'name':'Affirmations',

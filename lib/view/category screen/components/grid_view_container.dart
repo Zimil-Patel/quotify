@@ -14,7 +14,7 @@ Widget gridForCategories({required List list}) {
             crossAxisCount: 2,
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
-            mainAxisExtent: 200,
+            mainAxisExtent: 165,
             childAspectRatio: 50 / 130),
         itemBuilder: (BuildContext context, int index) {
           return Container(

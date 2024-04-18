@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:quotify/utils/theme/dark_theme.dart';
 import 'package:quotify/utils/theme/light_theme.dart';
+import 'package:quotify/view/add%20screen/add_screen.dart';
 import 'package:quotify/view/category%20screen/category_screen.dart';
 import 'package:quotify/view/home%20screen/home_screen.dart';
 import 'package:quotify/view/sign%20in%20screen/sign_in_screen.dart';
