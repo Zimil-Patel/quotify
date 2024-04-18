@@ -1,16 +1,17 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../utils/global list/general_lsit.dart';
+import '../../../../utils/global list/general_list.dart';
 import 'general_contanier.dart';
 
-Column Help_contanier(BuildContext context) {
+Column Others_contanier(BuildContext context) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Padding(
         padding: const EdgeInsets.only(top: 30, left: 20, bottom: 10),
-        child: Text('Help',
+        child: Text('Other',
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!
@@ -18,16 +19,18 @@ Column Help_contanier(BuildContext context) {
       ),
       Column(
         children: List.generate(
-          generalList3.length,
+          generalList4.length,
               (index) => CupertinoButton(
-              onPressed: () {},
+              onPressed: () {
+
+              },
               padding: EdgeInsets.zero,
               child: GeneralContainer(
                   context,
                   index,
-                  generalList3[index]['name'],
-                  generalList3[index]['icon'],
-                  generalList3.length)),
+                  generalList4[index]['name'],
+                  generalList4[index]['icon'],
+                  generalList4.length)),
         ),
       ),
     ],

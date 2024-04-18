@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:quotify/utils/global%20list/general_lsit.dart';
+import 'package:quotify/utils/global%20list/general_list.dart';
 import 'package:quotify/utils/global_variables.dart';
-import '../../utils/global list/profile_list.dart';
 import 'components/accounts_contanier.dart';
 import 'components/general_contanier.dart';
 import 'components/help_contanier.dart';

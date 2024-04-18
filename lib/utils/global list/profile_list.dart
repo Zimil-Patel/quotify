@@ -28,7 +28,7 @@ List profileList1=[
     'icon':CupertinoIcons.pencil,
   },
   {
-    'name': 'Post Quotes',
+    'name': 'Past Quotes',
     'icon': CupertinoIcons.infinite,
   },
   {

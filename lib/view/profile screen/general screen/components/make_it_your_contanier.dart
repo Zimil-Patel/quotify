@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../utils/global list/general_lsit.dart';
+import '../../../../utils/global list/general_list.dart';
 import 'general_contanier.dart';
 
 Column Make_it_your_contanier(BuildContext context) {

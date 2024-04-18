@@ -1,16 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../utils/global list/general_lsit.dart';
+import '../../../../utils/global list/general_list.dart';
 import 'general_contanier.dart';
 
-Column Supports_as_contanier(BuildContext context) {
+Column Help_contanier(BuildContext context) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Padding(
         padding: const EdgeInsets.only(top: 30, left: 20, bottom: 10),
-        child: Text('Support As',
+        child: Text('Help',
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!
@@ -18,18 +18,16 @@ Column Supports_as_contanier(BuildContext context) {
       ),
       Column(
         children: List.generate(
-          generalList2.length,
+          generalList3.length,
               (index) => CupertinoButton(
-              onPressed: () {
-
-              },
+              onPressed: () {},
               padding: EdgeInsets.zero,
               child: GeneralContainer(
                   context,
                   index,
-                  generalList2[index]['name'],
-                  generalList2[index]['icon'],
-                  generalList2.length)),
+                  generalList3[index]['name'],
+                  generalList3[index]['icon'],
+                  generalList3.length)),
         ),
       ),
     ],
