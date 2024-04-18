@@ -24,6 +24,9 @@ class _ThemeScreenState extends State<ThemeScreen> {
             children: [
               ThemeTitle(context),
               SizedBox(height: 20,),
+
+              title_name(context,name: 'Most Popular !'),
+              category_grid_box(10,name: 'affirmation'),
               title_name(context,name: 'Most Popular !'),
               category_grid_box(10,name: 'affirmation'),
               title_name(context,name: 'Broken'),

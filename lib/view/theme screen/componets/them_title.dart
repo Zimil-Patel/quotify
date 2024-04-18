@@ -11,6 +11,7 @@ Widget ThemeTitle(BuildContext context) {
       SizedBox(width: 20,),
       Icon(CupertinoIcons.clear),
       SizedBox(width: 20,),
+
       Text('Themes',style:Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: 30,fontWeight: FontWeight.w500),),
     ],
   );

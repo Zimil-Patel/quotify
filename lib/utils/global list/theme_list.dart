@@ -1,5 +1,6 @@
 Map image =
   {
+
     "affirmation": [
       'assets/project/affirmation/image1.jpeg',
       'assets/project/affirmation/image2.jpeg',
