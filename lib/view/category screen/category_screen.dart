@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:quotify/utils/global%20list/categories_list.dart';
-
+import 'package:quotify/utils/global%20list/categories_list.dart'; 
 import '../../utils/global_variables.dart';
 import 'components/grid_view_container.dart';
 import 'components/mix_categories_button.dart';
