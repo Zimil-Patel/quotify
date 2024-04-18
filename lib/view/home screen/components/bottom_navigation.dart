@@ -29,6 +29,19 @@ Widget bottomNavigationBox(BuildContext context) {
                   context: context,
                   h1: 60,
                   w1: 60,
+                  i1: CupertinoIcons.,
+                  t1: ''),
+            )),
+        Padding(
+            padding: const EdgeInsets.only(right: 15),
+            child: CupertinoButton(
+              padding: EdgeInsets.zero,
+              pressedOpacity: 0.8,
+              onPressed: () {},
+              child: bottomBox(
+                  context: context,
+                  h1: 60,
+                  w1: 60,
                   i1: CupertinoIcons.paintbrush,
                   t1: ''),
             )),
