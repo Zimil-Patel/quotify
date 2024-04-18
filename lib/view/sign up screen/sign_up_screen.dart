@@ -12,7 +12,6 @@ class SignUpScreen extends StatefulWidget {
   State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-TextEditingController dumy = TextEditingController();
 
 class _SignUpScreenState extends State<SignUpScreen> {
   @override
@@ -25,7 +24,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 14.0, vertical: 24),
             child: Form(
-              key: formkey,
+              key: formKey,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

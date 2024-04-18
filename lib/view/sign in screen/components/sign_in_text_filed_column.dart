@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import '../../sign up screen/sign_up_screen.dart';
 
+TextEditingController dumy = TextEditingController();
+
 Column signInTextFieldColumn({required BuildContext context}) {
   return Column(
     children: [

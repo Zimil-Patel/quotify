@@ -9,8 +9,11 @@ Padding signUpButton({required BuildContext context}) {
     child: Center(
       child: CupertinoButton(
         onPressed: () {
-          print('hello');
-          formkey.currentState!.validate();
+          if(formKey.currentState!.validate()){
+
+          } else {
+
+          }
         },
         child: Container(
           height: 60,
