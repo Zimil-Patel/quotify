@@ -13,15 +13,25 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+  final PageController _controller = PageController();
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
+    height = MediaQuery.of(context).size.height;
+    width = MediaQuery.of(context).size.width;
+
     return Scaffold(
-      //backgroundColor: Theme.of(context).colorScheme.surface,
       body: Stack(
         children: [
           PageView(
-            reverse: true,
-            padEnds: false,
+            onPageChanged: (value) => pageViewIndex = value,
             scrollDirection: Axis.vertical,
             children: List.generate(
                 reel.length,
@@ -38,34 +48,31 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Align(
                 alignment: Alignment.bottomCenter,
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Padding(
-                      padding: EdgeInsets.only(left: 100),
-                      child: Icon(
-                        CupertinoIcons.heart,
-                        size: 55,
-                      ),
+                    Icon(
+                      CupertinoIcons.heart,
+                      size: 40,
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 100),
-                      child: Icon(
-                        CupertinoIcons.share,
-                        size: 55,
-                      ),
+                    Icon(
+                      CupertinoIcons.share,
+                      size: 40,
                     ),
                   ],
                 )),
           ),
-          Align(
-              alignment: Alignment.bottomCenter,
-              child: bottomNavigationBox(context)),
-          // buildSizedBox(
-          //   h1: 100,
-          // ),
+          bottomNavigationBox(context: context),
         ],
       ),
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _controller.jumpToPage(pageViewIndex);
+    });
   }
 }
 

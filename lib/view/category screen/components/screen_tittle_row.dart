@@ -9,9 +9,14 @@ Padding screenTitleAndSearchIcon(BuildContext context) {
       children: [
         Row(
           children: [
-            const Icon(
-              CupertinoIcons.clear,
-              size: 28,
+            IconButton(
+              onPressed: (){
+                Navigator.pop(context);
+              },
+              icon: const Icon(
+                CupertinoIcons.clear,
+                size: 28,
+              ),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 20),

@@ -1,15 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:quotify/utils/global_variables.dart';
 
 Widget bottomBox(
-    {required double h1,
-      required double w1,
+    {required double height,
+      required double width,
       required BuildContext context,
-      required IconData i1,
-      String? t1}) {
+      required IconData icon,
+      required String name}) {
   return Container(
-    height: h1,
-    width: w1,
+    height: height,
+    width: width,
     decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.secondary,
         borderRadius: BorderRadius.circular(15)),
@@ -17,12 +17,12 @@ Widget bottomBox(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Icon(
-          i1,
+          icon,
           size: 30,
           color: Theme.of(context).colorScheme.surface,
         ),
         Text(
-          "$t1",
+          name,
           style: Theme.of(context)
               .textTheme
               .titleMedium!
@@ -35,7 +35,7 @@ Widget bottomBox(
 
 Widget buildSizedBox({double? h1, double? w1}) {
   return SizedBox(
-    height: h1,
-    width: w1,
+    height: height,
+    width: width,
   );
 }

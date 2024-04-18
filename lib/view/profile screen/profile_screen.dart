@@ -1,13 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:quotify/utils/global%20list/profile_list.dart';
 import 'package:quotify/utils/global_variables.dart';
-import 'package:quotify/view/profile%20screen/added%20screen/added_screen.dart';
-import 'package:quotify/view/profile%20screen/collection%20screen/collection_screen.dart';
 import 'package:quotify/view/profile%20screen/past%20quotes%20screen/past_quotes_screen.dart';
 import 'package:quotify/view/profile%20screen/widgets%20screen/widgets_screen.dart';
-import 'app icon/app_icon_screen.dart';
 import 'components/setting_contanier.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -27,25 +23,30 @@ class _ProfileScreenState extends State<ProfileScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 70, left: 20),
-                  child: Icon(CupertinoIcons.clear,
-                      color: Theme.of(context).colorScheme.onSurface),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 60, left: 20),
-                  child: Text(
-                    'Motivation',
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleLarge!
-                        .copyWith(fontSize: 28, fontWeight: FontWeight.w700),
-                  ),
-                )
-              ],
+        Padding(
+        padding: const EdgeInsets.only(top: 60, left: 15),
+        child: Row(
+          children: [
+            IconButton(
+              onPressed: (){
+                Navigator.pop(context);
+              },
+              icon: const Icon(
+                CupertinoIcons.clear,
+                size: 28,
+              ),
             ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Text('Motivation',
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge!
+                      .copyWith(fontSize: 30, fontWeight: FontWeight.w600)),
+            ),
+          ],
+        ),
+      ),
             Padding(
               padding: const EdgeInsets.only(top: 40, left: 20, bottom: 10),
               child: Text('Settings',
