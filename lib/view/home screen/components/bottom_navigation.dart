@@ -29,7 +29,7 @@ Widget bottomNavigationBox(BuildContext context) {
                   context: context,
                   h1: 60,
                   w1: 60,
-                  i1: CupertinoIcons.,
+                  i1: CupertinoIcons.text_cursor,
                   t1: ''),
             )),
         Padding(

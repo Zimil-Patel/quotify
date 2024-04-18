@@ -26,8 +26,6 @@ class _HomeScreenState extends State<HomeScreen> {
             children: List.generate(
                 reel.length,
                 (index) {
-                  if (index/10){}
-                  else{}
                   return Container(
                       height: height,
                       width: width,
