@@ -25,11 +25,15 @@ class _HomeScreenState extends State<HomeScreen> {
             scrollDirection: Axis.vertical,
             children: List.generate(
                 reel.length,
-                (index) => Container(
+                (index) {
+                  if (index/10){}
+                  else{}
+                  return Container(
                       height: height,
                       width: width,
                       color: reel[index],
-                    )),
+                    );
+                }),
           ),
           const Padding(
             padding: EdgeInsets.only(bottom: 150),
