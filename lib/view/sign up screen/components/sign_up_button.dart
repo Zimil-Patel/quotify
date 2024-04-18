@@ -8,7 +8,10 @@ Padding signUpButton({required BuildContext context}) {
     padding: const EdgeInsets.only(top: 50.0, bottom: 20),
     child: Center(
       child: CupertinoButton(
-        onPressed: () {},
+        onPressed: () {
+          print('hello');
+          formkey.currentState!.validate();
+        },
         child: Container(
           height: 60,
           width: width! / 1.5,

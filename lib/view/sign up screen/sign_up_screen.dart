@@ -24,21 +24,24 @@ class _SignUpScreenState extends State<SignUpScreen> {
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 14.0, vertical: 24),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                //SIGN UP TITLE TEXT
-                signUpTopStuff(context: context),
+            child: Form(
+              key: formkey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  //SIGN UP TITLE TEXT
+                  signUpTopStuff(context: context),
 
-                //TEXT FORM FIELD OF USERNAME
-                textFieldColumn(context: context),
+                  //TEXT FORM FIELD OF USERNAME
+                  textFieldColumn(context: context),
 
-                //SIGNUP BUTTON
-                signUpButton(context: context),
+                  //SIGNUP BUTTON
+                  signUpButton(context: context),
 
-                //SIGN IN TEXT BUTTON
-                signInTextButton(context: context),
-              ],
+                  //SIGN IN TEXT BUTTON
+                  signInTextButton(context: context),
+                ],
+              ),
             ),
           ),
         ),
