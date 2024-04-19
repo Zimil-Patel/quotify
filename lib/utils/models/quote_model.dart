@@ -1,8 +1,8 @@
-
-class QuoteProvider {
+class QuoteModel {
   String? quote, author;
 
-  QuoteProvider({this.quote, this.author});
+  QuoteModel({this.quote, this.author});
 
-  factory QuoteProvider.setData(String data) => QuoteProvider(quote: data);
+  factory QuoteModel.setData(Map map) =>
+      QuoteModel(quote: map['quote'], author: map['author']);
 }

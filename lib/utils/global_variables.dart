@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quotify/utils/models/user_model.dart';
 
 double? height, width;
 
@@ -13,3 +14,5 @@ TextEditingController txtSignUpName = TextEditingController();
 TextEditingController txtSignUpEmail = TextEditingController();
 TextEditingController txtSignUpPassword = TextEditingController();
 TextEditingController txtSignUpConfirmPassword = TextEditingController();
+
+UserProvider? userProvider;

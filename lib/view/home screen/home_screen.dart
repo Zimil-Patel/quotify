@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:quotify/utils/global_variables.dart';
 import 'components/bottom_navigation.dart';
 
@@ -11,8 +12,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final PageController _controller = PageController();
 
+  final PageController _controller = PageController();
   @override
   void dispose() {
     _controller.dispose();
@@ -21,20 +22,43 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    height = MediaQuery.of(context).size.height;
-    width = MediaQuery.of(context).size.width;
+    userProvider = Provider.of(context, listen: true);
+    // userProvider!.isGlobalQuoteListEmpty ? userProvider!.updateData() : null;
+
+    height = MediaQuery
+        .of(context)
+        .size
+        .height;
+    width = MediaQuery
+        .of(context)
+        .size
+        .width;
 
     return Scaffold(
       body: Stack(
         children: [
           PageView(
+            controller: _controller,
             onPageChanged: (value) => pageViewIndex = value,
             scrollDirection: Axis.vertical,
-            children: List.generate(reel.length, (index) {
+            children: List.generate(
+                userProvider!.globalQuoteList!.length, (index) {
               return Container(
                 height: height,
                 width: width,
-                color: reel[index],
+                color: Theme
+                    .of(context)
+                    .colorScheme
+                    .primary,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Text(
+                    userProvider!.globalQuoteList![index].quote!, style: const TextStyle(
+                    color: Colors.grey,
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold,
+                  ),),
+                ),
               );
             }),
           ),
@@ -70,13 +94,3 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 }
-
-List<Color> reel = [
-  Colors.green,
-  Colors.red,
-  Colors.blue,
-  Colors.yellow,
-  Colors.grey,
-  Colors.blueGrey,
-  Colors.purple,
-];
