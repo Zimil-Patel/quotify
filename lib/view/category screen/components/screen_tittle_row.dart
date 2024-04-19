@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:quotify/view/home%20screen/home_screen.dart';
 
 Padding screenTitleAndSearchIcon(BuildContext context) {
   return Padding(
@@ -11,7 +12,7 @@ Padding screenTitleAndSearchIcon(BuildContext context) {
           children: [
             IconButton(
               onPressed: (){
-                Navigator.pop(context);
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen(),));
               },
               icon: const Icon(
                 CupertinoIcons.clear,

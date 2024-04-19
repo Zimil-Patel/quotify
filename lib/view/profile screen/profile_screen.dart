@@ -2,8 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quotify/utils/global%20list/profile_list.dart';
 import 'package:quotify/utils/global_variables.dart';
-import 'package:quotify/view/profile%20screen/past%20quotes%20screen/past_quotes_screen.dart';
-import 'package:quotify/view/profile%20screen/widgets%20screen/widgets_screen.dart';
+import 'package:quotify/view/home%20screen/home_screen.dart';
 import 'components/setting_contanier.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -29,7 +28,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 children: [
                   IconButton(
                     onPressed: () {
-                      Navigator.pop(context);
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen(),));
                     },
                     icon: const Icon(
                       CupertinoIcons.clear,

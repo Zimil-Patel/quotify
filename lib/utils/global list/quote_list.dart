@@ -67,7 +67,7 @@ Map list = {
     },
     {"quote": "To love is to burn, to be on fire.", "author": "Jane Austen"},
   ],
-  "Affirmations": [
+  "Affirmation": [
     {
       "quote": "I am worthy of love and respect.",
       "author": '',
@@ -122,9 +122,11 @@ Map list = {
     },
     {
       "quote":
-      "I forgive myself for past mistakes and move forward with confidence."
+      "I forgive myself for past mistakes and move forward with confidence.",
+      "author": '',
     },
-    {"quote": "I am worthy of achieving my dreams."},
+    {"quote": "I am worthy of achieving my dreams.",
+      "author": '',},
   ],
   "Motivation": [
     {
@@ -340,7 +342,7 @@ Map list = {
       "author": "Walt Whitman"
     },
   ],
-  "Mental-Health": [
+  "Mental Health": [
     {
       "quote":
       "Your present circumstances don't determine where you can go; they merely determine where you start.",
@@ -544,7 +546,7 @@ Map list = {
       "author": "Aubrey Drake Graham"
     },
   ],
-  "Self-esteem": [
+  "Self Esteem": [
     {
       "quote":
       "Your value doesn't decrease based on someone's inability to see your worth.",

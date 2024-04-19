@@ -19,7 +19,7 @@ Widget bottomNavigationBox(
             padding: EdgeInsets.zero,
             pressedOpacity: 0.8,
             onPressed: () {
-              Navigator.push(
+              Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) => const CategoryScreen(),
@@ -52,7 +52,7 @@ Widget bottomNavigationBox(
                 padding: EdgeInsets.zero,
                 pressedOpacity: 0.8,
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const ThemeScreen(),));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ThemeScreen(),));
                 },
                 child: bottomBox(
                     context: context,
@@ -65,7 +65,7 @@ Widget bottomNavigationBox(
             padding: EdgeInsets.zero,
             pressedOpacity: 0.8,
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfileScreen(),));
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ProfileScreen(),));
             },
             child: bottomBox(
                 context: context,

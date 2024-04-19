@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:quotify/utils/global%20list/theme_list.dart';
 import 'package:quotify/utils/global_variables.dart';
+import 'package:quotify/view/home%20screen/home_screen.dart';
 
 Widget themeTitle(BuildContext context) {
   return Padding(
@@ -12,7 +13,7 @@ Widget themeTitle(BuildContext context) {
       children: [
         IconButton(
           onPressed: (){
-            Navigator.pop(context);
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen(),));
           },
           icon: const Icon(
             CupertinoIcons.clear,

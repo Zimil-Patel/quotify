@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:quotify/view/home%20screen/home_screen.dart';
 import '../../../utils/global_variables.dart';
 
 Widget gridForCategories({required List list}) {
@@ -21,37 +23,47 @@ Widget gridForCategories({required List list}) {
                 mainAxisExtent: 180,
             ),
             itemBuilder: (BuildContext context, int index) {
-              return Container(
-                margin: EdgeInsets.only(
-                    left: index == 0 || index == 1 ? 10 : 1.5,
-                    right: (list.length==4)?((index==list.length-2) || index==list.length-1)?10:1.5:index == list.length-1  ? 10 : 1.5),
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.surface,
-                    borderRadius: BorderRadius.circular(15)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 16.0),
-                      child: SizedBox(
-                        width: width! / 4.4,
-                        child: Text(list[index]['name'],
-                            overflow: TextOverflow.clip,
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleLarge!
-                                .copyWith(fontWeight: FontWeight.w500, fontSize: 14)),
+              return CupertinoButton(
+                padding: EdgeInsets.zero,
+                onPressed: () {
+                  userProvider!.isForParticularCategories = true;
+                  userProvider!.changeSelectedCategory(list[index]['name']);
+                  userProvider!.updateData();
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen(),));
+                },
+                child: Container(
+                  margin: EdgeInsets.only(
+                      left: index == 0 || index == 1 ? 10 : 1.5,
+                      right: (list.length==4)?((index==list.length-2) || index==list.length-1)?10:1.5:index == list.length-1  ? 10 : 1.5),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.surface,
+                      borderRadius: BorderRadius.circular(15)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 16.0),
+                        child: SizedBox(
+                          width: width! / 4.4,
+                          child: Text(list[index]['name'],
+                              overflow: TextOverflow.clip,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleLarge!
+                                  .copyWith(fontWeight: FontWeight.w500, fontSize: 14)),
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 16.0),
-                      child: Icon(
-                        list[index]['icon'],
-                        size: 30,
-                      ),
-                    )
-                  ],
+                      Padding(
+                        padding: const EdgeInsets.only(right: 16.0),
+                        child: Icon(
+                          list[index]['icon'],
+                          size: 30,
+                          color: Theme.of(context).colorScheme.onSurface,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               );
             },

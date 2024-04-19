@@ -29,7 +29,7 @@ List forYouList = [
     'icon': CupertinoIcons.book,
   },
   {
-    'name':'Affirmations',
+    'name':'Affirmation',
     'icon': CupertinoIcons.chat_bubble_2,
   },
   {
@@ -70,7 +70,7 @@ List personalGrowthList = [
     'icon': CupertinoIcons.hare,
   },
   {
-    'name':'Self-esteem',
+    'name':'Self Esteem',
     'icon': CupertinoIcons.greaterthan,
   },
   {
@@ -107,7 +107,7 @@ List calmDownList = [
     'icon': CupertinoIcons.moon_stars,
   },
   {
-    'name':'Mental-Health',
+    'name':'Mental Health',
     'icon': CupertinoIcons.lasso,
   },
   {

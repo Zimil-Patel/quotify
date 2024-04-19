@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:quotify/utils/global_variables.dart';
+import 'package:quotify/utils/models/user_model.dart';
 import 'components/bottom_navigation.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -12,8 +13,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  PageController _controller = PageController();
 
-  final PageController _controller = PageController();
   @override
   void dispose() {
     _controller.dispose();
@@ -22,63 +23,119 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    userProvider = Provider.of(context, listen: true);
-    // userProvider!.isGlobalQuoteListEmpty ? userProvider!.updateData() : null;
-
-    height = MediaQuery
-        .of(context)
-        .size
-        .height;
-    width = MediaQuery
-        .of(context)
-        .size
-        .width;
-
+    userProvider = Provider.of<UserProvider>(context, listen: true);
+    height = MediaQuery.of(context).size.height;
+    width = MediaQuery.of(context).size.width;
+    if(userProvider!.pageViewIndex == 0){
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        _controller.jumpToPage(userProvider!.pageViewIndex);
+      });
+    }
     return Scaffold(
       body: Stack(
         children: [
           PageView(
             controller: _controller,
-            onPageChanged: (value) => pageViewIndex = value,
+            onPageChanged: (value) {
+              userProvider!.setPageViewIndex(value);
+            },
             scrollDirection: Axis.vertical,
-            children: List.generate(
-                userProvider!.globalQuoteList!.length, (index) {
-              return Container(
-                height: height,
-                width: width,
-                color: Theme
-                    .of(context)
-                    .colorScheme
-                    .primary,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  child: Text(
-                    userProvider!.globalQuoteList![index].quote!, style: const TextStyle(
-                    color: Colors.grey,
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
-                  ),),
-                ),
+            children:
+                List.generate(userProvider!.globalQuoteList!.length, (index) {
+              return Stack(
+                children: [
+                  Container(
+                    height: height,
+                    width: width,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage(userProvider!.globalQuoteList![index].image!),
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                      child: Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              userProvider!.globalQuoteList![index].quote!,
+                              style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                                color: Colors.white
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 8.0),
+                              child: Text(
+                                '${userProvider!.globalQuoteList![index].author! == '' ? '' : '-'} ${userProvider!.globalQuoteList![index].author!} - ${userProvider!.globalQuoteList![index].category!}',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodySmall!
+                                    .copyWith(
+                                  fontSize: 14,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 150),
+                    child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            CupertinoButton(
+                              padding: EdgeInsets.zero,
+                              onPressed: () {
+                                userProvider!.toggleFavourite(
+                                    userProvider!.globalQuoteList![index]);
+                              },
+                              child: Icon(
+                                userProvider!.favouriteQuoteList!.contains(
+                                        userProvider!
+                                            .globalQuoteList![index])
+                                    ? CupertinoIcons.heart_fill
+                                    : CupertinoIcons.heart,
+                                color: userProvider!.favouriteQuoteList!
+                                        .contains(userProvider!
+                                            .globalQuoteList![index])
+                                    ? Colors.redAccent
+                                    : Colors.grey,
+                                size: 40,
+                              ),
+                            ),
+                            const Icon(
+                              CupertinoIcons.share,
+                              color: Colors.grey,
+                              size: 40,
+                            ),
+                          ],
+                        )),
+                  ),
+                ],
               );
             }),
           ),
-          const Padding(
-            padding: EdgeInsets.only(bottom: 150),
-            child: Align(
-                alignment: Alignment.bottomCenter,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Icon(
-                      CupertinoIcons.heart,
-                      size: 40,
-                    ),
-                    Icon(
-                      CupertinoIcons.share,
-                      size: 40,
-                    ),
-                  ],
-                )),
+          IconButton(
+            onPressed: () {
+              userProvider!.isForParticularCategories = false;
+              userProvider!.refresh();
+            },
+            icon: const Padding(
+              padding: EdgeInsets.only(top: 60.0, left: 14),
+              child: Icon(
+                Icons.sync,
+                size: 40,
+                color: Colors.grey,
+              ),
+            ),
           ),
           bottomNavigationBox(context: context),
         ],
@@ -89,8 +146,12 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _controller.jumpToPage(pageViewIndex);
-    });
+    // WidgetsBinding.instance.addPostFrameCallback((_) {
+    //   _controller.jumpToPage(userProvider!.pageViewIndex);
+    // });
+    _controller = PageController(
+      initialPage: userProvider!.pageViewIndex,
+      viewportFraction: 1.0,
+    );
   }
 }

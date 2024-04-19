@@ -81,6 +81,11 @@ flutter:
     - assets/project/positive/
     - assets/project/sad/
     - assets/project/success/
+    - assets/project/loyalty/
+    - assets/project/patience/
+    - assets/project/gratitude/
+    - assets/project/self esteem/
+    - assets/project/discipline/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

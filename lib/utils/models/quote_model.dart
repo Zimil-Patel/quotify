@@ -1,8 +1,27 @@
+import 'dart:io';
+import 'dart:ui';
+
 class QuoteModel {
-  String? quote, author;
+  String? quote, author, category;
+  bool isImage = false;
+  String? image;
+  Color? color;
 
-  QuoteModel({this.quote, this.author});
+  QuoteModel({this.quote,
+    this.author,
+    this.category,
+    required this.isImage,
+    this.image,
+  });
 
-  factory QuoteModel.setData(Map map) =>
-      QuoteModel(quote: map['quote'], author: map['author']);
+  factory QuoteModel.setData(Map map, String category, int counter) =>
+      QuoteModel(
+          quote: map['quote'],
+          author: map['author'],
+          isImage: false,
+          category: category,
+          image: 'assets/project/${category.toLowerCase()}/image${counter > 10 ? counter - 10 : counter}.jpeg'
+      );
 }
+
+
