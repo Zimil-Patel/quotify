@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:quotify/utils/theme/dark_theme.dart';
 import 'package:quotify/utils/theme/light_theme.dart';
+import 'package:quotify/view/category%20screen/category_screen.dart';
 import 'package:quotify/view/home%20screen/home_screen.dart';
 
 void main(){
@@ -27,7 +28,7 @@ class QuotifyApp extends StatelessWidget {
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: ThemeMode.system,
-      home: const HomeScreen(),
+      home: const CategoryScreen(),
     );
   }
 }

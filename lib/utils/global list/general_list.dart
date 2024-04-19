@@ -32,7 +32,7 @@ List generalList=[
 // Accounts
 List generalList1=[
   {
-    'name':'Sign in',
+    'name':'Sign out',
     'icon':CupertinoIcons.person_add,
   },
 ];

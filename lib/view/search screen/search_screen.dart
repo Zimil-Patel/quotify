@@ -40,12 +40,18 @@ class _SearchScreenState extends State<SearchScreen> {
                   )
                 ],
               ),
-              Column(
-                children: [
-                  Text('Suggestions' , style: Theme.of(context).textTheme.titleLarge,),
+             Column(
+               children: [
+                 Text('Suggestions' , style: Theme.of(context).textTheme.titleLarge,),
+                 Text('Love' , style: Theme.of(context).textTheme.titleSmall!.copyWith(fontSize: 22),),
+                 Text('Affirmation' , style: Theme.of(context).textTheme.titleSmall!.copyWith(fontSize: 22),),
+                 Text('Motivation' , style: Theme.of(context).textTheme.titleSmall!.copyWith(fontSize: 22),),
+                 Text('Deep' , style: Theme.of(context).textTheme.titleSmall!.copyWith(fontSize: 22),),
+                 Text('Positive' , style: Theme.of(context).textTheme.titleSmall!.copyWith(fontSize: 22),),
+                 Text('Mental-health' , style: Theme.of(context).textTheme.titleSmall!.copyWith(fontSize: 22),),
+               ],
+             )
 
-                ],
-              )
 
             ],
           ),

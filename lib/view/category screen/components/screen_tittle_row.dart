@@ -10,7 +10,7 @@ Padding screenTitleAndSearchIcon(BuildContext context) {
         Row(
           children: [
             IconButton(
-              onPressed: (){
+              onPressed: () {
                 Navigator.pop(context);
               },
               icon: const Icon(
@@ -28,11 +28,16 @@ Padding screenTitleAndSearchIcon(BuildContext context) {
             ),
           ],
         ),
-        const Padding(
-          padding: EdgeInsets.only(right: 15.0),
-          child: Icon(
-            CupertinoIcons.search,
-            size: 30,
+        CupertinoButton(
+          padding: EdgeInsets.zero,
+          onPressed: () {  },
+          child: Padding(
+            padding: EdgeInsets.only(right: 15.0),
+            child: Icon(
+              CupertinoIcons.search,
+              color: Theme.of(context).colorScheme.secondary,
+              size: 30,
+            ),
           ),
         )
       ],
