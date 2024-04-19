@@ -9,7 +9,7 @@ import ' bottom_button_box.dart';
 import '../../../utils/global_variables.dart';
 
 Widget bottomNavigationBox(
-    {required BuildContext context}) {
+    {required BuildContext context,required final VoidCallback  toggle}) {
   return Align(
     alignment: Alignment.bottomCenter,
     child: Padding(
@@ -40,7 +40,7 @@ Widget bottomNavigationBox(
                 padding: EdgeInsets.zero,
                 pressedOpacity: 0.8,
                 onPressed: () {
-                  textThemeBottomSheet(context);
+                  textThemeBottomSheet(context,toggle);
                 },
                 child: bottomBox(
                     context: context,

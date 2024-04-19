@@ -23,6 +23,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    void toggle()
+    {
+      setState(() {
+      });
+    }
     userProvider = Provider.of<UserProvider>(context, listen: true);
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
@@ -139,7 +144,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          bottomNavigationBox(context: context),
+          bottomNavigationBox(context: context,toggle: toggle),
         ],
       ),
     );

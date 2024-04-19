@@ -15,3 +15,7 @@ TextEditingController txtSignUpConfirmPassword = TextEditingController();
 
 UserProvider? userProvider;
 ThemeProvider? themeProvider;
+
+//bottom sheet
+
+int bottomsheetindex=0;

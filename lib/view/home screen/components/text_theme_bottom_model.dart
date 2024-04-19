@@ -1,165 +1,171 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hsvcolor_picker/flutter_hsvcolor_picker.dart';
+import 'package:google_fonts/google_fonts.dart';
 
+import '../../../utils/global list/font_color_list.dart';
+import '../../../utils/global list/font_family_list.dart';
 import '../../../utils/global_variables.dart';
 
-Future<dynamic> textThemeBottomSheet(BuildContext context) {
+Future<dynamic> textThemeBottomSheet(
+    BuildContext context, final VoidCallback toggle) {
   return showModalBottomSheet(
-      context: context,
-      builder: (context) => Container(
-          height:height!/5,
-          width: width,
-          child: Column(
-            children: [
-              Expanded(
-                child: IndexedStack(
-                  index: 0,
-                  children: [
-                    Container(
-                      height: height! / 0.9,
-                      width: width! / 0.9,
-                      child: Row(
-                        children: [
-                          Container(
-                            height: height! / 10,
-                            width: width! / 10,
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.green
-                            ),
-                          ),
-                          SizedBox(width: 10,),
-                          Container(
-                            height: height! / 10,
-                            width: width! / 10,
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.yellow
-                            ),
-                          ),
-                          SizedBox(width: 10,),
-                          Container(
-                            height: height! / 10,
-                            width: width! / 10,
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.black
-                            ),
-                          ),
-                          SizedBox(width: 10,),
-                          Container(
-                            height: height! / 10,
-                            width: width! / 10,
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.blue
-                            ),
-                          ),
-                          SizedBox(width: 10,),
-                          Container(
-                            height: height! / 10,
-                            width: width! / 10,
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.red
-                            ),
-                          ),
-                          SizedBox(width: 10,),
-                          Container(
-                            height: height! / 10,
-                            width: width! / 10,
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.pink
-                            ),
-                          ),
-                          SizedBox(width: 10,),
-                          Container(
-                            height: height! / 10,
-                            width: width! / 10,
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.orangeAccent
-                            ),
-                          ),
-                          SizedBox(width: 10,),
-                          Container(
-                            height: height! / 10,
-                            width: width! / 10,
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.lightGreen
-                            ),
-                          ),
-
-                        ],
+    context: context,
+    builder: (context) => Container(
+      height: height!/2,
+      width: width,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 11.0, horizontal: 20),
+            child: Text(
+              'Edit Your Text color',
+              style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                  fontSize: 22, color: Theme.of(context).colorScheme.secondary),
+            ),
+          ),
+          Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: List.generate(
+                    Colorlist.length,
+                    (index) => InkWell(
+                      onTap: () {
+                        toggle();
+                        (index == 0)
+                            ? showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                              title: const Text('Pick your color'),
+                              content: Container(
+                                height: height! / 1.5,
+                                width: width! / 1.5,
+                                child: ColorPicker(
+                                  color: Colorlist[0],
+                                  onChanged: (value) {
+                                    toggle();
+                                    Colorlist[0] = value;
+                                  },
+                                  initialPicker: Picker.paletteHue,
+                                ),
+                              ),
+                              actions: [
+                                InkWell(
+                                    onTap: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: const Text("save"))
+                              ],
+                            ))
+                            : null;
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          height: height! / 13,
+                          width: width!/6,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colorlist[index]),
+                          child: (index == 0)
+                              ? Icon(
+                                  Icons.add,
+                                  size: 35,
+                            color: Colors.black,
+                                )
+                              : null,
+                        ),
                       ),
                     ),
-                    Container(
-                      height: height! / 5,
-                      width: width! / 5,
-
-                    ),
-                    Container(
-                      height: height! / 1,
-                      width: width! / 1,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Icon(CupertinoIcons.textformat_size , size: 20, color: Theme.of(context).colorScheme.secondary,),
-                          Icon(CupertinoIcons.textformat_size , size: 30, color: Theme.of(context).colorScheme.secondary,),
-                          Icon(CupertinoIcons.textformat_size , size: 35, color: Theme.of(context).colorScheme.secondary,),
-                          Icon(CupertinoIcons.textformat_size , size: 40, color: Theme.of(context).colorScheme.secondary,),
-                          Icon(CupertinoIcons.textformat_size , size: 45, color: Theme.of(context).colorScheme.secondary,),
-
-                        ],
-                      ),
-                    ),
-                    Container(
-                      height: height! / 1,
-                      width: width! / 1,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Icon(CupertinoIcons.text_alignleft , size: 30, color: Theme.of(context).colorScheme.secondary,),
-                          Icon(CupertinoIcons.text_aligncenter , size: 30, color: Theme.of(context).colorScheme.secondary,),
-                          Icon(CupertinoIcons.text_alignright , size: 30, color: Theme.of(context).colorScheme.secondary,)
-                        ],
-                      ),
-                    )
-                  ],
+                  ),
                 ),
-              ),
-              Row(
-                children: [
-                  Container(
-                    height: 70,
-                    width: 100,
-                    // color: Colors.grey,
-                    child: Icon(CupertinoIcons.color_filter , color: Theme.of(context).colorScheme.secondary,size: 30,),
-                  ),
-                  Container(
-                    height: 70,
-                    width: 100,
-                    // color: Colors.grey,
-                    child: Icon(CupertinoIcons.textformat , color: Theme.of(context).colorScheme.secondary,size: 30,),
-                  ),
-                  Container(
-                    height: 70,
-                    width: 100,
-                    // color: Colors.grey,
-                    child: Icon(CupertinoIcons.textformat_size , color: Theme.of(context).colorScheme.secondary,size: 30,),
-                  ),
-                  Container(
-                    height: 70,
-                    width: 100,
-                    // color: Colors.grey,
-                    child: Icon(CupertinoIcons.text_aligncenter , color: Theme.of(context).colorScheme.secondary,size: 30,),
-                  ),
-                ],
-              )
-            ],
+              )),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 11.0, horizontal: 20),
+            child: Text(
+              'Edit Your Text family',
+              style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                  fontSize: 22, color: Theme.of(context).colorScheme.secondary),
+            ),
           ),
+          SizedBox(
+            height: 70,
+            child: Stack(
+              children: [
+                Center(
+                  child: Container(
+                    height: 50,
+                    width: 350,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.white.withOpacity(0.2),
+                    ),
+                  ),
+                ),
+                ListWheelScrollView.useDelegate(
+                    itemExtent: 55,
+                    onSelectedItemChanged: (value) {
+                      toggle();
+                    },
+                    childDelegate: ListWheelChildBuilderDelegate(
+                      childCount: fontFamilyList.length,
+                      builder: (context, index) => Text(
+                        "Motivation",
+                        style: fontFamilyList[index](
+                            fontSize: 20.0, color: Colors.black),
+                      ),
+                    ))
+              ],
+            ),
           ),
-      );
+          Padding(
+            padding: const EdgeInsets.only(top: 11.0, left: 20),
+            child: Text(
+              'Edit Your Text alignament',
+              style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                  fontSize: 22, color: Theme.of(context).colorScheme.secondary),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                CupertinoButton(
+                  child: Icon(
+                    CupertinoIcons.text_alignleft,
+                    size: 30,
+                    color: Theme.of(context).colorScheme.secondary,
+                  ),
+                  padding: EdgeInsets.zero,
+                  onPressed: () {},
+                ),
+                CupertinoButton(
+                  child: Icon(
+                    CupertinoIcons.text_aligncenter,
+                    size: 30,
+                    color: Theme.of(context).colorScheme.secondary,
+                  ),
+                  padding: EdgeInsets.zero,
+                  onPressed: () {},
+                ),
+                CupertinoButton(
+                  child: Icon(
+                    CupertinoIcons.text_alignright,
+                    size: 30,
+                    color: Theme.of(context).colorScheme.secondary,
+                  ),
+                  padding: EdgeInsets.zero,
+                  onPressed: () {},
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    ),
+  );
 }
