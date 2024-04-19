@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 
 List generalList = [
   {
-    'name': 'Genral',
+    'name': 'General',
     'icon': CupertinoIcons.circle,
   },
   {
