@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:quotify/view/sign%20in%20screen/sign_in_screen.dart';
 import '../../../../utils/global list/general_list.dart';
 import 'general_contanier.dart';
 
@@ -20,7 +21,7 @@ Column Account_us_contanier(BuildContext context) {
           generalList1.length,
               (index) => CupertinoButton(
             onPressed: () {
-
+              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => SignInScreen(),));
             },
             padding: EdgeInsets.zero,
             child: GeneralContainer(

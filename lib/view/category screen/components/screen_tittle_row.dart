@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:quotify/view/home%20screen/home_screen.dart';
 
 Padding screenTitleAndSearchIcon(BuildContext context) {
   return Padding(
@@ -29,11 +28,16 @@ Padding screenTitleAndSearchIcon(BuildContext context) {
             ),
           ],
         ),
-        const Padding(
-          padding: EdgeInsets.only(right: 15.0),
-          child: Icon(
-            CupertinoIcons.search,
-            size: 30,
+        CupertinoButton(
+          padding: EdgeInsets.zero,
+          onPressed: () {  },
+          child: Padding(
+            padding: EdgeInsets.only(right: 15.0),
+            child: Icon(
+              CupertinoIcons.search,
+              color: Theme.of(context).colorScheme.secondary,
+              size: 30,
+            ),
           ),
         )
       ],
