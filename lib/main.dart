@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:quotify/utils/theme/dark_theme.dart';
 import 'package:quotify/utils/theme/light_theme.dart';
 import 'package:quotify/view/home%20screen/home_screen.dart';
+import 'package:quotify/view/profile%20screen/profile_screen.dart';
 
 void main(){
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +28,7 @@ class QuotifyApp extends StatelessWidget {
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: ThemeMode.system,
-      home: const HomeScreen(),
+      home: ProfileScreen(),
     );
   }
 }

@@ -79,7 +79,7 @@ class _WidgetsScreenState extends State<WidgetsScreen> {
                       child: Text(
                         'On Your Phones HomeScreen,touch and hold an\n empty space where you want to add a widgets ',
                         style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                            fontSize: 17, fontWeight: FontWeight.w700),
+                            fontSize: 16, fontWeight: FontWeight.w700),
                       ))
                 ],
               ),
@@ -112,7 +112,7 @@ class _WidgetsScreenState extends State<WidgetsScreen> {
                       child: Text(
                         'Tap Widgets',
                         style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                            fontSize: 17, fontWeight: FontWeight.w700),
+                            fontSize: 16, fontWeight: FontWeight.w700),
                       ))
                 ],
               ),
@@ -145,7 +145,7 @@ class _WidgetsScreenState extends State<WidgetsScreen> {
                       child: Text(
                         'Look for the Motivation Widgets in the list and\nselect the one you are interested in. ',
                         style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                            fontSize: 17, fontWeight: FontWeight.w700),
+                            fontSize: 16, fontWeight: FontWeight.w700),
                       )),
                   Padding(
                     padding:
@@ -162,7 +162,7 @@ class _WidgetsScreenState extends State<WidgetsScreen> {
                             .textTheme
                             .bodyMedium!
                             .copyWith(
-                                fontWeight: FontWeight.w400, fontSize: 25,color: Colors.white),
+                                fontWeight: FontWeight.w400, fontSize: 22,color: Colors.white),
                       ),
                       alignment: Alignment.center,
                     ),
@@ -174,7 +174,7 @@ class _WidgetsScreenState extends State<WidgetsScreen> {
           Padding(
             padding: const EdgeInsets.only(top: 20, left: 15, right: 15),
             child: Container(
-              height: height! / 9,
+              // height: height! / 9,
               width: width,
               decoration: BoxDecoration(
                   color: Theme.of(context).colorScheme.surface,
@@ -194,11 +194,11 @@ class _WidgetsScreenState extends State<WidgetsScreen> {
                     child: Divider(),
                   ),
                   Padding(
-                      padding: const EdgeInsets.only(top: 10, left: 10),
+                      padding: const EdgeInsets.only(top: 1, left: 10),
                       child: Text(
                         'Customize Your Widgets to your taste and add it.',
                         style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                            fontSize: 17, fontWeight: FontWeight.w700),
+                            fontSize: 16, fontWeight: FontWeight.w700),
                       ))
                 ],
               ),
