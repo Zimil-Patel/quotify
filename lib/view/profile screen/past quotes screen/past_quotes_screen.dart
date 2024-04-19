@@ -17,59 +17,79 @@ class _PastQuotesScreenState extends State<PastQuotesScreen> {
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: Column(
-        children: [
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 70, left: 20),
-                child: Icon(CupertinoIcons.arrow_left,
-                    color: Theme.of(context).colorScheme.onSurface),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 60, left: 20),
-                child: Text(
-                  'Past Quotes',
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge!
-                      .copyWith(fontSize: 28, fontWeight: FontWeight.w700),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 70, left: 20),
+                  child: Icon(CupertinoIcons.arrow_left,
+                      color: Theme.of(context).colorScheme.onSurface),
                 ),
-              )
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 30, left: 15, right: 15),
-            child: Container(
-              height: height! / 7,
-              width: width,
-              decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.surface,
-                  borderRadius: BorderRadius.circular(15)),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10, left: 10),
-                    child: Text(
-                      'Confident people have a way of carrying themselves \n that makes others attracted to them.',
-                      style: Theme.of(context)
-                          .textTheme
-                          .titleLarge!
-                          .copyWith(fontSize: 16, fontWeight: FontWeight.w600),
-                    ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 60, left: 20),
+                  child: Text(
+                    'Past Quotes',
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge!
+                        .copyWith(fontSize: 28, fontWeight: FontWeight.w700),
                   ),
-                  Spacer(),
-                  Align(
-                    alignment: Alignment.bottomRight,
-                    child: Icon(CupertinoIcons.heart),
-                  ),
-                ],
-              ),
+                )
+              ],
             ),
-          ),
-        ],
+            ...List.generate(6, (index) => Past_Quotes_Contanier(context),)
+          ],
+        ),
       ),
     );
+  }
+
+  Padding Past_Quotes_Contanier(BuildContext context) {
+    return Padding(
+          padding: const EdgeInsets.only(top: 20, left: 15, right: 15),
+          child: Container(
+            height: height! / 7,
+            width: width,
+            decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.surface,
+                borderRadius: BorderRadius.circular(15)),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 10, left: 10),
+                  child: Text(
+                    'Confident people have a way of carrying themselves \n that makes others attracted to them.',
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleLarge!
+                        .copyWith(fontSize: 16, fontWeight: FontWeight.w600),
+                  ),
+                ),
+                const Row(
+                  children: [
+                    Spacer(),
+                    Padding(
+                      padding: EdgeInsets.only(top: 50, right: 20),
+                      child: Icon(CupertinoIcons.heart,size: 30,),
+                    ),
+                    // const Spacer(),
+                    Padding(
+                      padding: EdgeInsets.only(top: 50, right: 20),
+                      child: Icon(CupertinoIcons.bookmark,size: 29,),
+                    ),
+                    // const Spacer(),
+                    Padding(
+                      padding: EdgeInsets.only(top: 50, right: 30),
+                      child: Icon(CupertinoIcons.share,size: 30,),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+        );
   }
 }
