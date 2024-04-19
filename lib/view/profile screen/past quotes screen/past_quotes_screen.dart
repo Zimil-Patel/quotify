@@ -19,16 +19,24 @@ class _PastQuotesScreenState extends State<PastQuotesScreen> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 70, left: 20),
-                  child: Icon(CupertinoIcons.arrow_left,
-                      color: Theme.of(context).colorScheme.onSurface),
+                IconButton(
+                  onPressed: (){
+                    Navigator.pop(context);
+                  },
+                  icon: const Padding(
+                    padding: EdgeInsets.only(top: 60,left: 15),
+                    child:  Icon(
+                      CupertinoIcons.clear,
+                      size: 28,
+                    ),
+                  ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 60, left: 20),
+                  padding: const EdgeInsets.only(top:60,left: 20),
                   child: Text(
                     'Past Quotes',
                     style: Theme.of(context)

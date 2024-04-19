@@ -23,12 +23,12 @@ Padding Step2Contanier(BuildContext context) {
             child: Text('Step 2',style: Theme.of(context).textTheme.titleLarge,),
           ),
           const Padding(
-            padding: EdgeInsets.only(right: 10,left: 10,top: 10),
+            padding: EdgeInsets.only(right: 10,left: 10,top: 1),
             child: Divider(),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 10,left: 10),
-            child: Text('Reopen the app and go back to "Settings" and tap \n "App Icon".Tap to select your new app icon! ',style: Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: 17),),
+            padding: const EdgeInsets.only(top: 5,left: 10),
+            child: Text('Reopen the app and go back to "Settings" and tap \n "App Icon".Tap to select your new app icon! ',style: Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: 15),),
           ),
         ],
       ),

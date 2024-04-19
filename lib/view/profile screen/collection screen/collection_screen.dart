@@ -60,11 +60,11 @@ class _CollectionScreenState extends State<CollectionScreen> {
          Padding(
            padding: const EdgeInsets.only(top: 300),
            child: Container(
-             height: height! / 10,
-             width: width! / 3,
+             height: height! / 5,
+             width: width! / 1.5,
              decoration: BoxDecoration(
-               color: Colors.white
              ),
+             child: Image(image: AssetImage('assets/imges/new images/b1.png'),fit: BoxFit.fill,),
            ),
          ),
           Padding(

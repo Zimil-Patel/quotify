@@ -22,12 +22,12 @@ Padding Step1Contanier(BuildContext context) {
             child: Text('Step 1',style: Theme.of(context).textTheme.titleLarge,),
           ),
           const Padding(
-            padding: EdgeInsets.only(right: 10,left: 10,top: 5),
+            padding: EdgeInsets.only(right: 10,left: 10,top: 1),
             child: Divider(),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 10,left: 10),
-            child: Text('Click on "Activate" button below. This will\n automatically shut down the app',style: Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: 17),),
+            padding: const EdgeInsets.only(top: 5,left: 10),
+            child: Text('Click on "Activate" button below. This will\n automatically shut down the app',style: Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: 15),),
           )
         ],
       ),
