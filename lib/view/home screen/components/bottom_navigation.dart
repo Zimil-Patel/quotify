@@ -1,16 +1,23 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:quotify/view/category%20screen/category_screen.dart';
+import 'package:quotify/view/profile%20screen/profile_screen.dart';
 
 import ' bottom_button_box.dart';
 
 Widget bottomNavigationBox(BuildContext context) {
   return Padding(
-    padding: const EdgeInsets.only(bottom: 20,left: 15,right: 15),
+    padding: const EdgeInsets.only(bottom: 20, left: 15, right: 15),
     child: Row(
       children: [
         CupertinoButton(
           padding: EdgeInsets.zero,
           pressedOpacity: 0.8,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => CategoryScreen(),
+            ));
+          },
           child: bottomBox(
               context: context,
               h1: 60,
@@ -24,7 +31,14 @@ Widget bottomNavigationBox(BuildContext context) {
             child: CupertinoButton(
               padding: EdgeInsets.zero,
               pressedOpacity: 0.8,
-              onPressed: () {},
+              onPressed: () {
+                showModalBottomSheet(
+                  context: context,
+                  builder: (context) {
+                    return Container();
+                  },
+                );
+              },
               child: bottomBox(
                   context: context,
                   h1: 60,
@@ -48,7 +62,9 @@ Widget bottomNavigationBox(BuildContext context) {
         CupertinoButton(
           padding: EdgeInsets.zero,
           pressedOpacity: 0.8,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => ProfileScreen(),));
+          },
           child: bottomBox(
               context: context,
               h1: 60,
