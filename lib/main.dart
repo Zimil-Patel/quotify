@@ -5,6 +5,7 @@ import 'package:quotify/utils/theme/light_theme.dart';
 import 'package:quotify/view/add%20screen/add_screen.dart';
 import 'package:quotify/view/category%20screen/category_screen.dart';
 import 'package:quotify/view/home%20screen/home_screen.dart';
+import 'package:quotify/view/search%20screen/search_screen.dart';
 import 'package:quotify/view/sign%20in%20screen/sign_in_screen.dart';
 import 'package:quotify/view/sign%20up%20screen/sign_up_screen.dart';
 
@@ -31,7 +32,7 @@ class QuotifyApp extends StatelessWidget {
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: ThemeMode.system,
-      home: CategoryScreen(),
+      home: SearchScreen(),
     );
   }
 }
