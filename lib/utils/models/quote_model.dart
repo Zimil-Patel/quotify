@@ -3,7 +3,7 @@ import 'dart:ui';
 
 class QuoteModel {
   String? quote, author, category;
-  bool isImage = false;
+  bool isImage = true;
   String? image;
   Color? color;
 
@@ -18,7 +18,7 @@ class QuoteModel {
       QuoteModel(
           quote: map['quote'],
           author: map['author'],
-          isImage: false,
+          isImage: true,
           category: category,
           image: 'assets/project/${category.toLowerCase()}/image${counter > 10 ? counter - 10 : counter}.jpeg'
       );

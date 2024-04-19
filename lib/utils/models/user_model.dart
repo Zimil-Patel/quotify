@@ -72,9 +72,7 @@ class UserProvider extends ChangeNotifier {
   }
 
   refreshGlobalQuoteListToRandom(){
-    if(isForParticularCategories == false)
-    {
-      print(categoryPriorities);
+    if (isForParticularCategories == false) {
       globalQuoteList!.clear();
       Random random = Random();
 
@@ -93,26 +91,24 @@ class UserProvider extends ChangeNotifier {
         }
 
         globalQuoteList?.addAll(selectedQuotes);
-        print('in inside');
-
         remainingQuotes -= quotesToSelect;
       }
 
-      for (int i = 0; i < 20; i++) {
+      for (int i = 0; i < categories.length; i++) {
         selectRandomQuotes(quoteLists[categories[i]], categoryPriorities[i]);
       }
 
-      globalQuoteList?.shuffle();
-
-
+      globalQuoteList!.shuffle();
       print(globalQuoteList!.length);
     }
   }
 
   updateData() {
     pageViewIndex = 0;
-    globalQuoteList = quoteLists[selectedCategory];
+    globalQuoteList!.clear();
     print(selectedCategory);
+    print(globalQuoteList);
+    globalQuoteList!.addAll(quoteLists[selectedCategory]);
     print(globalQuoteList);
     globalQuoteList!.shuffle();
     notifyListeners();
@@ -135,5 +131,18 @@ class UserProvider extends ChangeNotifier {
 
   changeSelectedCategory(String name) {
     selectedCategory = name;
+    notifyListeners();
+  }
+
+  changeImage(QuoteModel value, String img){
+    value.isImage = true;
+    value.image = img;
+    notifyListeners();
+  }
+
+  changeImageToColor(QuoteModel value, Color color){
+    value.isImage = false;
+    value.color = color;
+    notifyListeners();
   }
 }

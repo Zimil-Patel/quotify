@@ -47,11 +47,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   Container(
                     height: height,
                     width: width,
-                    decoration: BoxDecoration(
+                    decoration: userProvider!.globalQuoteList![userProvider!.pageViewIndex].isImage ?  BoxDecoration(
                       image: DecorationImage(
                         fit: BoxFit.cover,
                         image: AssetImage(userProvider!.globalQuoteList![index].image!),
                       ),
+                    ) : BoxDecoration(
+                      color: userProvider!.globalQuoteList![userProvider!.pageViewIndex].color
                     ),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20.0),

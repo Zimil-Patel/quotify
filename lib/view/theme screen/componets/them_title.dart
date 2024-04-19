@@ -66,17 +66,29 @@ Padding category_grid_box(int c,{required String name}) {
             mainAxisExtent: 110,
             childAspectRatio: 50 / 130),
         itemBuilder: (BuildContext context, int index) {
-          return Container(
-            margin: EdgeInsets.only(
-                left: index == 0 ? 10 : 1.5,
-                right: index == 9 ? 10 : 1.5),
-            alignment: Alignment.center,
-            decoration:name=='color'? BoxDecoration(
-                color: image[name][index],
-                borderRadius: BorderRadius.circular(15),
-            ):BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                image: DecorationImage(image: AssetImage(image[name][index]),fit: BoxFit.cover)
+          return CupertinoButton(
+            padding: EdgeInsets.zero,
+            onPressed: () {
+              if(name == 'color'){
+                userProvider!.changeImageToColor(userProvider!.globalQuoteList![userProvider!.pageViewIndex], image[name][index]);
+
+              } else {
+                userProvider!.changeImage(userProvider!.globalQuoteList![userProvider!.pageViewIndex], image[name][index]);
+              }
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen(),));
+            },
+            child: Container(
+              margin: EdgeInsets.only(
+                  left: index == 0 ? 10 : 1.5,
+                  right: index == 9 ? 10 : 1.5),
+              alignment: Alignment.center,
+              decoration:name=='color'? BoxDecoration(
+                  color: image[name][index],
+                  borderRadius: BorderRadius.circular(15),
+              ):BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  image: DecorationImage(image: AssetImage(image[name][index]),fit: BoxFit.cover)
+              ),
             ),
           );
         },
