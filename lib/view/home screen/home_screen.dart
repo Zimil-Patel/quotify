@@ -125,14 +125,14 @@ class _HomeScreenState extends State<HomeScreen> {
               );
             }),
           ),
-          IconButton(
-            onPressed: () {
-              userProvider!.isForParticularCategories = false;
-              userProvider!.refresh();
-            },
-            icon: const Padding(
-              padding: EdgeInsets.only(top: 60.0, left: 14),
-              child: Icon(
+          Padding(
+            padding: const EdgeInsets.only(top: 60.0, left: 14),
+            child: IconButton(
+              onPressed: () {
+                userProvider!.isForParticularCategories = false;
+                userProvider!.refresh();
+              },
+              icon: const Icon(
                 Icons.sync,
                 size: 40,
                 color: Colors.grey,
