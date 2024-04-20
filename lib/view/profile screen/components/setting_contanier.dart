@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:quotify/view/profile%20screen/added%20screen/added_screen.dart';
 import 'package:quotify/view/profile%20screen/app%20icon/app_icon_screen.dart';
 import 'package:quotify/view/profile%20screen/collection%20screen/collection_screen.dart';
 import 'package:quotify/view/profile%20screen/favorites%20screen/favorites_screen.dart';
@@ -49,6 +50,11 @@ settingContainer(BuildContext context, int index, String t1, IconData i1, bool i
                 ));
             break;
           case 1:
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const AddedScreen(),
+                ));
             break;
           case 2:
             Navigator.push(

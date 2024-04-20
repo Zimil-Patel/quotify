@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quotify/utils/global%20list/general_list.dart';
 import 'package:quotify/utils/global_variables.dart';
+import 'package:quotify/view/profile%20screen/components/head_name.dart';
 import 'components/accounts_contanier.dart';
 import 'components/general_contanier.dart';
 import 'components/help_contanier.dart';
@@ -27,39 +28,22 @@ class _GeneralScreenState extends State<GeneralScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
-            Padding(
-              padding: const EdgeInsets.only(top: 60, left: 15),
-              child: Row(
-                children: [
-                  IconButton(
-                    onPressed: (){
-                      Navigator.pop(context);
-                    },
-                    icon: const Icon(
-                      CupertinoIcons.clear,
-                      size: 28,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20),
-                    child: Text('General',
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleLarge!
-                            .copyWith(fontSize: 30, fontWeight: FontWeight.w600)),
-                  ),
-                ],
-              ),
-            ),
+            //HEAD TITLE
+            head_title(context, 'General'),
 
+            //MAKE IT YOURS
             Make_it_your_contanier(context),
 
+            //ACCOUNTS
             Account_us_contanier(context),
 
+            //SUPPPORT AS
             Supports_as_contanier(context),
 
+            //HELP
             Help_contanier(context),
 
+            //OTHER
             Others_contanier(context),
           ],
         ),

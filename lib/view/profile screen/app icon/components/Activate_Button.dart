@@ -15,7 +15,7 @@ Padding ActivateButton(BuildContext context) {
               .onSurface,
           borderRadius: BorderRadius.circular(15)
       ),
-      child: Center(child: Text("Activate",style: Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: 25,),)),
+      child: Center(child: Text("Activate",style: Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: 22,),)),
     ),
   );
 }

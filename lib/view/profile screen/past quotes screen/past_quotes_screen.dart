@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:quotify/view/profile%20screen/components/head_name.dart';
 
 import '../../../utils/global_variables.dart';
+import 'components/pass_quotes_list.dart';
 
 class PastQuotesScreen extends StatefulWidget {
   const PastQuotesScreen({super.key});
@@ -21,83 +23,12 @@ class _PastQuotesScreenState extends State<PastQuotesScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                IconButton(
-                  onPressed: (){
-                    Navigator.pop(context);
-                  },
-                  icon: const Padding(
-                    padding: EdgeInsets.only(top: 60,left: 15),
-                    child:  Icon(
-                      CupertinoIcons.clear,
-                      size: 28,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top:60,left: 20),
-                  child: Text(
-                    'Past Quotes',
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleLarge!
-                        .copyWith(fontSize: 28, fontWeight: FontWeight.w700),
-                  ),
-                )
-              ],
-            ),
+            //HEAD OF SCREEN
+            head_title(context, 'Past Quotes'),
             ...List.generate(6, (index) => Past_Quotes_Contanier(context),)
           ],
         ),
       ),
     );
-  }
-
-  Padding Past_Quotes_Contanier(BuildContext context) {
-    return Padding(
-          padding: const EdgeInsets.only(top: 20, left: 15, right: 15),
-          child: Container(
-            height: height! / 7,
-            width: width,
-            decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.surface,
-                borderRadius: BorderRadius.circular(15)),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 10, left: 10),
-                  child: Text(
-                    'Confident people have a way of carrying themselves \n that makes others attracted to them.',
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleLarge!
-                        .copyWith(fontSize: 16, fontWeight: FontWeight.w600),
-                  ),
-                ),
-                const Row(
-                  children: [
-                    Spacer(),
-                    Padding(
-                      padding: EdgeInsets.only(top: 50, right: 20),
-                      child: Icon(CupertinoIcons.heart,size: 30,),
-                    ),
-                    // const Spacer(),
-                    Padding(
-                      padding: EdgeInsets.only(top: 50, right: 20),
-                      child: Icon(CupertinoIcons.bookmark,size: 29,),
-                    ),
-                    // const Spacer(),
-                    Padding(
-                      padding: EdgeInsets.only(top: 50, right: 30),
-                      child: Icon(CupertinoIcons.share,size: 30,),
-                    ),
-                  ],
-                )
-              ],
-            ),
-          ),
-        );
   }
 }

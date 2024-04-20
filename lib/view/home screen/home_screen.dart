@@ -1,5 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:icon_decoration/icon_decoration.dart';
+import 'package:outlined_text/models/outlined_text_stroke.dart';
+import 'package:outlined_text/outlined_text.dart';
 import 'package:provider/provider.dart';
 import 'package:quotify/utils/global_variables.dart';
 import 'package:quotify/utils/models/user_model.dart';
@@ -67,23 +71,39 @@ class _HomeScreenState extends State<HomeScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              userProvider!.globalQuoteList![index].quote!,
-                              style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                                color: Colors.white
+                            OutlinedText(
+                              text: Text(
+                                userProvider!.globalQuoteList![index].quote!,
+                                style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                                  color: Colors.white
+                                ),
                               ),
+                              strokes: [
+                                OutlinedTextStroke(
+                                    color: Colors.black,
+                                    width:2
+                                ),
+                              ],
                             ),
                             Padding(
                               padding: const EdgeInsets.only(top: 8.0),
-                              child: Text(
-                                '${userProvider!.globalQuoteList![index].author! == '' ? '' : '-'} ${userProvider!.globalQuoteList![index].author!} - ${userProvider!.globalQuoteList![index].category!}',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .copyWith(
-                                  fontSize: 14,
-                                  color: Colors.white,
+                              child: OutlinedText(
+                                text: Text(
+                                  '${userProvider!.globalQuoteList![index].author! == '' ? '' : '-'} ${userProvider!.globalQuoteList![index].author!} - ${userProvider!.globalQuoteList![index].category!}',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodySmall!
+                                      .copyWith(
+                                    fontSize: 14,
+                                    color: Colors.white,
+                                  ),
                                 ),
+                                strokes: [
+                                  OutlinedTextStroke(
+                                      color: Colors.black,
+                                      width:2
+                                  ),
+                                ],
                               ),
                             ),
                           ],
@@ -104,24 +124,30 @@ class _HomeScreenState extends State<HomeScreen> {
                                 userProvider!.toggleFavourite(
                                     userProvider!.globalQuoteList![index]);
                               },
-                              child: Icon(
-                                userProvider!.favouriteQuoteList!.contains(
-                                        userProvider!
-                                            .globalQuoteList![index])
-                                    ? CupertinoIcons.heart_fill
-                                    : CupertinoIcons.heart,
-                                color: userProvider!.favouriteQuoteList!
-                                        .contains(userProvider!
-                                            .globalQuoteList![index])
-                                    ? Colors.redAccent
-                                    : Colors.grey,
-                                size: 40,
+                              child: DecoratedIcon(
+                                icon: Icon(
+                                  userProvider!.favouriteQuoteList!.contains(
+                                          userProvider!
+                                              .globalQuoteList![index])
+                                      ? CupertinoIcons.heart_fill
+                                      : CupertinoIcons.heart,
+                                  color: userProvider!.favouriteQuoteList!
+                                          .contains(userProvider!
+                                              .globalQuoteList![index])
+                                      ? Colors.redAccent
+                                      : Colors.white,
+                                  size: 40,
+                                ),
+                                decoration: IconDecoration(border: IconBorder(color:Colors.black,width: 1.5)),
                               ),
                             ),
-                            const Icon(
-                              CupertinoIcons.share,
-                              color: Colors.grey,
-                              size: 40,
+                            DecoratedIcon(
+                              icon: const Icon(
+                                CupertinoIcons.share,
+                                color: Colors.white,
+                                size: 40,
+                              ),
+                              decoration: IconDecoration(border: IconBorder(color:Colors.black,width: 1.5)),
                             ),
                           ],
                         )),
@@ -137,10 +163,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 userProvider!.isForParticularCategories = false;
                 userProvider!.refresh();
               },
-              icon: const Icon(
-                Icons.sync,
-                size: 40,
-                color: Colors.grey,
+              icon: DecoratedIcon(
+                icon: Icon(
+                  Icons.sync,
+                  size: 40,
+                  color: Colors.white,
+                ),
+                decoration: IconDecoration(border: IconBorder(color:Colors.black,width: 1.5)),
               ),
             ),
           ),

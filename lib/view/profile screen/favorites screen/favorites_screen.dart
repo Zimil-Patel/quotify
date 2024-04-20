@@ -1,6 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:quotify/utils/global_variables.dart';
+
+import '../../../utils/models/user_model.dart';
+import 'componects/favorite_list_null.dart';
+import 'componects/favorites_quotes.dart';
 
 class FavoritesScreen extends StatefulWidget {
   const FavoritesScreen({super.key});
@@ -12,6 +17,7 @@ class FavoritesScreen extends StatefulWidget {
 class _FavoritesScreenState extends State<FavoritesScreen> {
   @override
   Widget build(BuildContext context) {
+    userProvider = Provider.of<UserProvider>(context, listen: true);
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -43,27 +49,20 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
               )
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 300),
-            child: Container(
-              height: height! / 5,
-              width: width! / 1.5,
-              decoration: BoxDecoration(
-                color: Colors.white
-              ),
-              // child: Image(image: AssetImage('assets/imges/new images/b1.png'),fit: BoxFit.fill,),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 50),
-            child: Text('You do not  have any\n      favorites yet.',style: Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: 27,fontWeight: FontWeight.w700),),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 10),
-            child: Text("Keep track of the quotes you \n love by adding them to your\n              favorites.",style: Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: 19,fontWeight: FontWeight.w400),),
-          )
+          (userProvider!.favouriteQuoteList!.isEmpty)?favorites_list_nulls(context):favorites_quotes_author(context)
         ],
       ),
     );
   }
 }
+// userProvider!.favouriteQuoteList!.contains(
+// userProvider!
+//     .globalQuoteList![index])
+// ? CupertinoIcons.heart_fill
+//     : CupertinoIcons.heart,
+// color: userProvider!.favouriteQuoteList!
+//     .contains(userProvider!
+//     .globalQuoteList![index])
+// ? Colors.redAccent
+// : Colors.white,
+// size: 25,

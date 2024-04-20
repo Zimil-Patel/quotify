@@ -6,7 +6,7 @@ Padding Step2Contanier(BuildContext context) {
   return Padding(
     padding: const EdgeInsets.only(top: 20,left: 15,right: 15),
     child: Container(
-      height: height! / 6,
+      height: height! / 5,
       width: width,
       decoration: BoxDecoration(
           color: Theme
@@ -28,7 +28,7 @@ Padding Step2Contanier(BuildContext context) {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 5,left: 10),
-            child: Text('Reopen the app and go back to "Settings" and tap \n "App Icon".Tap to select your new app icon! ',style: Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: 15),),
+            child: SizedBox(width: width!/1.2,child: Text('Reopen the app and go back to "Settings" and tap "App Icon".Tap to select your new app icon! ',style: Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: 15),)),
           ),
         ],
       ),

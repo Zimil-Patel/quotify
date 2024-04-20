@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hsvcolor_picker/flutter_hsvcolor_picker.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../../../utils/global list/font_color_list.dart';
 import '../../../utils/global list/font_family_list.dart';
