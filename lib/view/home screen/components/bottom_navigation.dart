@@ -9,7 +9,7 @@ import ' bottom_button_box.dart';
 import '../../../utils/global_variables.dart';
 
 Widget bottomNavigationBox(
-    {required BuildContext context,required final VoidCallback  toggle}) {
+    {required BuildContext context, required final VoidCallback toggle}) {
   return Align(
     alignment: Alignment.bottomCenter,
     child: Padding(
@@ -40,7 +40,7 @@ Widget bottomNavigationBox(
                 padding: EdgeInsets.zero,
                 pressedOpacity: 0.8,
                 onPressed: () {
-                  textThemeBottomSheet(context,toggle);
+                  textThemeBottomSheet(context, toggle);
                 },
                 child: bottomBox(
                     context: context,
@@ -55,7 +55,11 @@ Widget bottomNavigationBox(
                 padding: EdgeInsets.zero,
                 pressedOpacity: 0.8,
                 onPressed: () {
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ThemeScreen(),));
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ThemeScreen(),
+                      ));
                 },
                 child: bottomBox(
                     context: context,
@@ -68,7 +72,11 @@ Widget bottomNavigationBox(
             padding: EdgeInsets.zero,
             pressedOpacity: 0.8,
             onPressed: () {
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const ProfileScreen(),));
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ProfileScreen(),
+                  ));
             },
             child: bottomBox(
                 context: context,
