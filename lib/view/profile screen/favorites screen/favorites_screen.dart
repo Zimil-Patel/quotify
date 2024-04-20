@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:quotify/utils/global_variables.dart';
+import 'package:quotify/view/profile%20screen/components/head_name.dart';
 
 import '../../../utils/models/user_model.dart';
 import 'componects/favorite_list_null.dart';
@@ -23,33 +24,15 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
     return Scaffold(
       body: Column(
         children: [
-          Row(
-            children: [
-              IconButton(
-                onPressed: (){
-                  Navigator.pop(context);
-                },
-                icon: const Padding(
-                  padding: EdgeInsets.only(top: 60,left: 15),
-                  child:  Icon(
-                    CupertinoIcons.clear,
-                    size: 28,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top:60,left: 20),
-                child: Text(
-                  'Favorites',
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge!
-                      .copyWith(fontSize: 28, fontWeight: FontWeight.w700),
-                ),
-              )
-            ],
-          ),
-          (userProvider!.favouriteQuoteList!.isEmpty)?favorites_list_nulls(context):favorites_quotes_author(context)
+          //HEAD OF SCREEN
+          head_title(context, 'Favorites'),
+
+          //FAVORITES
+          (userProvider!.favouriteQuoteList!.isEmpty)?
+          //FAVORITES LIST NULL
+          favorites_list_nulls(context):
+          //FAVORITES QUOTOES AUTHOR
+          favorites_quotes_author(context)
         ],
       ),
     );
