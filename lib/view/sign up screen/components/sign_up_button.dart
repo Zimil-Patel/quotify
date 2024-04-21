@@ -16,6 +16,7 @@ Padding signUpButton({required BuildContext context}) {
                 'name': txtSignUpName.text,
                 'email': txtSignUpEmail.text,
                 'pass': txtSignUpPassword.text,
+                'img': null,
               };
               users.add(map);
               userLen++;
