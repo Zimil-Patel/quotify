@@ -1,34 +1,37 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:quotify/utils/global_variables.dart';
 
 import '../../sign up screen/sign_up_screen.dart';
 
-TextEditingController dumy = TextEditingController();
 
-Column signInTextFieldColumn({required BuildContext context}) {
-  return Column(
-    children: [
-      textFormField(
-          context: context,
-          controller: dumy,
-          errorText: 'Please Enter valid email!',
-          hintText: 'Email',
-          iconData: CupertinoIcons.mail,
-          textInputType: TextInputType.emailAddress),
-      textFormField(
-          context: context,
-          controller: dumy,
-          errorText: 'Please Enter valid password!',
-          hintText: 'Password',
-          iconData: CupertinoIcons.padlock,
-          textInputType: TextInputType.text,
-          textInputAction: TextInputAction.done,
-      ),
-    ],
+signInTextFieldColumn({required BuildContext context}) {
+  return Form(
+    key: signInformKey,
+    child: Column(
+      children: [
+        textFormFieldS(
+            context: context,
+            controller: txtSignInEmail,
+            errorText: 'Please Enter valid email!',
+            hintText: 'Email',
+            iconData: CupertinoIcons.mail,
+            textInputType: TextInputType.emailAddress),
+        textFormFieldS(
+            context: context,
+            controller: txtSignInPassword,
+            errorText: 'Please Enter valid password!',
+            hintText: 'Password',
+            iconData: CupertinoIcons.padlock,
+            textInputType: TextInputType.text,
+            textInputAction: TextInputAction.done,
+        ),
+      ],
+    ),
   );
 }
 
-Row textFormField(
+Row textFormFieldS(
     {required BuildContext context,
     IconData? iconData,
     required TextEditingController controller,
@@ -55,13 +58,7 @@ Row textFormField(
             onTapOutside: (event) {
               FocusManager.instance.primaryFocus!.unfocus();
             },
-            validator: (value) {
-              if (value!.isEmpty || value == '') {
-                errorText;
-              } else {
-                null;
-              }
-            },
+            validator: (value) => value!.isEmpty || value == '' ? errorText : null,
             textInputAction: textInputAction ?? TextInputAction.next,
             keyboardType: textInputType ?? TextInputType.text,
             //DECORATION

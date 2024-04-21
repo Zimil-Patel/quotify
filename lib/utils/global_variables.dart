@@ -7,6 +7,7 @@ double? height, width;
 //INTRO SCREEN INDEX
 int introScreenIndex = 0;
 GlobalKey<FormState> formKey = GlobalKey<FormState>();
+GlobalKey<FormState> signInformKey = GlobalKey<FormState>();
 GlobalKey<FormState> addQuoteKey = GlobalKey<FormState>();
 
 TextEditingController txtSignUpName = TextEditingController();
@@ -14,6 +15,9 @@ TextEditingController txtSignUpEmail = TextEditingController();
 TextEditingController txtSignUpPassword = TextEditingController();
 TextEditingController txtSignUpConfirmPassword = TextEditingController();
 
+
+TextEditingController txtSignInEmail = TextEditingController();
+TextEditingController txtSignInPassword = TextEditingController();
 
 //ADD QUOTE CONTROLLERS
 TextEditingController txtQuote = TextEditingController();
@@ -24,3 +28,18 @@ UserProvider? userProvider;
 ThemeProvider? themeProvider;
 
 
+//LIST OF USERS
+List users = [];
+int userLen = 0;
+int currentUser = 0;
+
+
+//CLEAR FIELDS
+void clearField(){
+  txtSignUpName.clear();
+  txtSignUpEmail.clear();
+  txtSignUpPassword.clear();
+  txtSignUpConfirmPassword.clear();
+  txtSignInEmail.clear();
+  txtSignInPassword.clear();
+}

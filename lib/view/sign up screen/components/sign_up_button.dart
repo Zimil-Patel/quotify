@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:quotify/view/sign%20in%20screen/sign_in_screen.dart';
 
 import '../../../utils/global_variables.dart';
 
@@ -10,7 +11,31 @@ Padding signUpButton({required BuildContext context}) {
       child: CupertinoButton(
         onPressed: () {
           if(formKey.currentState!.validate()){
+            {
+              Map map = {
+                'name': txtSignUpName.text,
+                'email': txtSignUpEmail.text,
+                'pass': txtSignUpPassword.text,
+              };
+              users.add(map);
+              userLen++;
 
+                SnackBar snackBar = SnackBar(
+                  duration: const Duration(seconds: 1),
+                  content: Text(
+                    'Registered Successfully!',
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                );
+                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                clearField();
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SignInScreen(),));
+
+            }
           } else {
 
           }
@@ -32,3 +57,5 @@ Padding signUpButton({required BuildContext context}) {
     ),
   );
 }
+
+
