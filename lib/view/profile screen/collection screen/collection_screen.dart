@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:quotify/view/profile%20screen/components/head_name.dart';
 
 import '../../../utils/global_variables.dart';
@@ -24,17 +25,17 @@ class _CollectionScreenState extends State<CollectionScreen> {
           head_title(context, 'Collection'),
 
           //NULL COLLECTION TITLE
-          Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 80),
-                child: SizedBox(width: width!/1.2,child: Text('You do not have any Collection yet.',textAlign: TextAlign.center,style: Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: 27,fontWeight: FontWeight.w700),)),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: SizedBox(width: width!/1.2,child: Text("Collection group quotes you save together,like 'Loving myself' or 'Reaching my goals'.",textAlign: TextAlign.center,style: Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: 19,fontWeight: FontWeight.w400),)),
-              ),
-            ],
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(width: width!/1.2,child: Text('You do not have any Collection yet.',textAlign: TextAlign.center,style: Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: 27,fontWeight: FontWeight.w700),)),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: SizedBox(width: width!/1.2,child: Text("Collection group quotes you save together,like 'Loving myself' or 'Reaching my goals'.",textAlign: TextAlign.center,style: Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: 19,fontWeight: FontWeight.w400),)),
+                ),
+              ],
+            ),
           )
         ],
       ),

@@ -145,4 +145,11 @@ class UserProvider extends ChangeNotifier {
     value.color = color;
     notifyListeners();
   }
+
+  void removeFromFavouriteList({required int index}) {
+    int quoteIndex = categories.indexOf(favouriteQuoteList![index].category!);
+    categoryPriorities[quoteIndex] = -2;
+    favouriteQuoteList!.removeAt(index);
+    notifyListeners();
+  }
 }

@@ -11,7 +11,7 @@ Widget bottomBox(
     height: height,
     width: width,
     decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.secondary,
+        color: Theme.of(context).colorScheme.primary,
         borderRadius: BorderRadius.circular(15)),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -19,13 +19,13 @@ Widget bottomBox(
         Icon(
           icon,
           size: 30,
-          color: Theme.of(context).colorScheme.surface,
+          color: Theme.of(context).colorScheme.onSurface,
         ),
         Text(
           name,
           style: Theme.of(context)
               .textTheme
-              .titleMedium!
+              .titleSmall!
               .copyWith(fontSize: 18, fontWeight: FontWeight.w400),
         ),
       ],

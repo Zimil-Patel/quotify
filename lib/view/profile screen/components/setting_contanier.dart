@@ -75,7 +75,7 @@ settingContainer(BuildContext context, int index, String t1, IconData i1, bool i
 
     },
     child: Padding(
-      padding: const EdgeInsets.only(top: 4, left: 15, right: 15),
+      padding: const EdgeInsets.only(top: 1.5, left: 15, right: 15),
       child: Container(
         height: height! / 14,
         width: width,

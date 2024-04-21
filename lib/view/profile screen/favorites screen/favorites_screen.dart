@@ -30,22 +30,11 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
           //FAVORITES
           (userProvider!.favouriteQuoteList!.isEmpty)?
           //FAVORITES LIST NULL
-          favorites_list_nulls(context):
-          //FAVORITES QUOTOES AUTHOR
-          favorites_quotes_author(context)
+          favouriteListNullMessage(context):
+          //FAVORITES QUOTE AUTHOR
+          favouriteContainerBox(context)
         ],
       ),
     );
   }
 }
-// userProvider!.favouriteQuoteList!.contains(
-// userProvider!
-//     .globalQuoteList![index])
-// ? CupertinoIcons.heart_fill
-//     : CupertinoIcons.heart,
-// color: userProvider!.favouriteQuoteList!
-//     .contains(userProvider!
-//     .globalQuoteList![index])
-// ? Colors.redAccent
-// : Colors.white,
-// size: 25,
