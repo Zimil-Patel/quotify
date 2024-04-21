@@ -12,7 +12,7 @@ Container introScreenThree(BuildContext context) {
     child: Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 100.0),
+          padding: const EdgeInsets.only(top: 100.0, left: 20, right: 20),
           child: SizedBox(
               width: width! / 1,
               child: Text(

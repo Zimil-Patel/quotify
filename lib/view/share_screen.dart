@@ -8,6 +8,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:icon_decoration/icon_decoration.dart';
+import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:outlined_text/outlined_text.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
@@ -120,7 +121,7 @@ class ShareScreen extends StatelessWidget {
 
 
           Padding(
-            padding: const EdgeInsets.only(bottom: 150),
+            padding: const EdgeInsets.only(bottom: 60),
             child: Align(
                 alignment: Alignment.bottomCenter,
                 child: Row(
@@ -128,8 +129,22 @@ class ShareScreen extends StatelessWidget {
                   children: [
                     CupertinoButton(
                       padding: EdgeInsets.zero,
-                      onPressed: () {
+                      onPressed: () async {
+                        final boudary =
+                        userProvider!.imgKey.currentContext!.findRenderObject() as RenderRepaintBoundary;
 
+                        ui.Image image = await boudary.toImage();
+
+                        ByteData? byteData =
+                            await image.toByteData(format: ui.ImageByteFormat.png);
+
+                        final imgData = byteData!.buffer.asUint8List();
+
+                        ImageGallerySaver.saveImage(imgData);
+
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            duration: Duration(seconds: 1),
+                            content: Text('Saved!')));
                       },
                       child: DecoratedIcon(
                         icon: Icon(
