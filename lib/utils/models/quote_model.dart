@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:ui';
 
 class QuoteModel {
@@ -12,6 +11,7 @@ class QuoteModel {
     this.category,
     required this.isImage,
     this.image,
+    this.color,
   });
 
   factory QuoteModel.setData(Map map, String category, int counter) =>

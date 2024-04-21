@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:provider/provider.dart';
+import 'package:quotify/view/profile%20screen/added%20screen/components/own_quote_list.dart';
 import 'package:quotify/view/profile%20screen/components/head_name.dart';
 
 import '../../../utils/global_variables.dart';
+import '../../../utils/models/user_model.dart';
 import 'components/head_of_screen.dart';
 
 class AddedScreen extends StatefulWidget {
@@ -16,6 +19,7 @@ class AddedScreen extends StatefulWidget {
 class _AddedScreenState extends State<AddedScreen> {
   @override
   Widget build(BuildContext context) {
+    userProvider = Provider.of<UserProvider>(context, listen: true);
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -25,6 +29,7 @@ class _AddedScreenState extends State<AddedScreen> {
           //HEAD OF ADD SCREEN
           head_of_added(context),
 
+          userProvider!.ownQuoteList.isEmpty ?
           //NULL ADDED TITLE
           Expanded(
             child: Column(
@@ -40,22 +45,24 @@ class _AddedScreenState extends State<AddedScreen> {
                           .titleLarge!
                           .copyWith(fontSize: 27, fontWeight: FontWeight.w700),
                     )),
+
                 Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: SizedBox(
-                      width: width! / 1.2,
-                      child: Text(
-                        "Add your own interesting quotes to this list and never forget them.",
-                        textAlign: TextAlign.center,
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleLarge!
-                            .copyWith(fontSize: 19, fontWeight: FontWeight.w400),
-                      )),
+                    padding: const EdgeInsets.only(top: 10),
+                    child: SizedBox(
+                        width: width! / 1.2,
+                        child: Text(
+                          "Add your own interesting quotes to this list and never forget them.",
+                          textAlign: TextAlign.center,
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleLarge!
+                              .copyWith(fontSize: 19, fontWeight: FontWeight.w400),
+                        )),
+
                 ),
               ],
             ),
-          )
+          ) : ownQuoteContainer(context),
         ],
       ),
     );

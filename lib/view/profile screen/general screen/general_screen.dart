@@ -37,7 +37,7 @@ class _GeneralScreenState extends State<GeneralScreen> {
             //ACCOUNTS
             Account_us_contanier(context),
 
-            //SUPPPORT AS
+            //SUPPORT AS
             Supports_as_contanier(context),
 
             //HELP

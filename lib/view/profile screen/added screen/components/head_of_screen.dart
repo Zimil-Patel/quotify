@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:quotify/view/profile%20screen/added%20screen/add%20screen/add_screen.dart';
 
 import '../../../../utils/global_variables.dart';
 import '../../components/head_name.dart';
@@ -23,7 +24,9 @@ Row head_of_added(BuildContext context) {
                 'Add',textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.titleMedium,
               )),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => AddScreen(),));
+          },
         ),
       )
     ],

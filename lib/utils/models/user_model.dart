@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:quotify/utils/models/quote_model.dart';
 import 'package:quotify/utils/models/text_theme_model.dart';
@@ -28,6 +29,8 @@ class UserProvider extends ChangeNotifier {
   List<QuoteModel>? globalQuoteList = [];
 
   List<QuoteModel>? favouriteQuoteList = [];
+
+  List<QuoteModel> ownQuoteList = [];
 
   List<int> categoryPriorities = [
     1,
@@ -169,6 +172,16 @@ class UserProvider extends ChangeNotifier {
   void changeTextAlignmentTo({required TextThemeModel value,required TextAlign textAlign,required MainAxisAlignment mainAxisAlignment}){
     value.quoteTextAlign = textAlign;
     value.authorTextAlign = mainAxisAlignment;
+    notifyListeners();
+  }
+
+  void addQuote({required String quote, required String author}){
+    ownQuoteList.add(QuoteModel(isImage: false, color: Colors.grey, author: author, quote: quote, category: 'own'));
+    notifyListeners();
+  }
+
+  void removeFromOwnQuoteList({required int index}) {
+    ownQuoteList.removeAt(index);
     notifyListeners();
   }
 }

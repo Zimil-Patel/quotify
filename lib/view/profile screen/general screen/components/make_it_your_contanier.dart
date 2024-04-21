@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:quotify/view/profile%20screen/general%20screen/chnage%20theme%20screen/change_theme_screen.dart';
 
 import '../../../../utils/global list/general_list.dart';
 import 'general_contanier.dart';
@@ -20,7 +21,8 @@ Column Make_it_your_contanier(BuildContext context) {
         generalList.length,
             (index) => CupertinoButton(
           onPressed: () {
-
+            if(index == 4)
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ThemeChangeScreen(),));
           },
           padding: EdgeInsets.zero,
           child: GeneralContainer(context, index, generalList[index]['name'],

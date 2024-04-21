@@ -7,11 +7,18 @@ double? height, width;
 //INTRO SCREEN INDEX
 int introScreenIndex = 0;
 GlobalKey<FormState> formKey = GlobalKey<FormState>();
+GlobalKey<FormState> addQuoteKey = GlobalKey<FormState>();
 
 TextEditingController txtSignUpName = TextEditingController();
 TextEditingController txtSignUpEmail = TextEditingController();
 TextEditingController txtSignUpPassword = TextEditingController();
 TextEditingController txtSignUpConfirmPassword = TextEditingController();
+
+
+//ADD QUOTE CONTROLLERS
+TextEditingController txtQuote = TextEditingController();
+TextEditingController txtAuthor = TextEditingController();
+
 
 UserProvider? userProvider;
 ThemeProvider? themeProvider;

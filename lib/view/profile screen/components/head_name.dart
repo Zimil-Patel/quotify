@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../utils/global_variables.dart';
 import '../../home screen/home_screen.dart';
 
 Padding head_title(BuildContext context,String name) {
@@ -10,6 +11,8 @@ Padding head_title(BuildContext context,String name) {
       children: [
         IconButton(
           onPressed: () {
+            txtQuote.clear();
+            txtAuthor.clear();
             Navigator.pop(context);
           },
           icon: const Icon(
