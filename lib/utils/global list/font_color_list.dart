@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-List Colorlist =[
+List textColorList =[
   Colors.white,
   Colors.blueGrey,
   Colors.blue,

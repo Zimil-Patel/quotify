@@ -31,7 +31,7 @@ Future<dynamic> textThemeBottomSheet(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(
-                Colorlist.length,
+                textColorList.length,
                 (index) => CupertinoButton(
                   padding: EdgeInsets.zero,
                   onPressed: () {
@@ -43,9 +43,9 @@ Future<dynamic> textThemeBottomSheet(
                                   content: SizedBox(
                                     width: width! / 1.5,
                                     child: ColorPicker(
-                                      color: Colorlist[0],
+                                      color: textColorList[0],
                                       onChanged: (value) {
-                                        Colorlist[0] = value;
+                                        userProvider!.changeFontColorTo(userProvider!.textThemeModel, value);
                                       },
                                       initialPicker: Picker.paletteHue,
                                     ),
@@ -64,7 +64,8 @@ Future<dynamic> textThemeBottomSheet(
                                         ))
                                   ],
                                 ))
-                        : null;
+                        : userProvider!.changeFontColorTo(userProvider!.textThemeModel, textColorList[index]);
+
                   },
                   child: Container(
                     height: height! / 17,
@@ -78,7 +79,7 @@ Future<dynamic> textThemeBottomSheet(
                                   'assets/imges/intro imges/gradient.png'),
                             ))
                         : BoxDecoration(
-                            shape: BoxShape.circle, color: Colorlist[index]),
+                            shape: BoxShape.circle, color: textColorList[index]),
                     child: (index == 0)
                         ? const Icon(
                             Icons.edit,
@@ -147,7 +148,9 @@ Future<dynamic> textThemeBottomSheet(
             children: [
               CupertinoButton(
                 padding: EdgeInsets.zero,
-                onPressed: () {},
+                onPressed: () {
+                  userProvider!.changeTextAlignmentTo(value: userProvider!.textThemeModel, textAlign: TextAlign.left, mainAxisAlignment: MainAxisAlignment.start);
+                },
                 child: Icon(
                   CupertinoIcons.text_alignleft,
                   size: 30,
@@ -156,7 +159,9 @@ Future<dynamic> textThemeBottomSheet(
               ),
               CupertinoButton(
                 padding: EdgeInsets.zero,
-                onPressed: () {},
+                onPressed: () {
+                  userProvider!.changeTextAlignmentTo(value: userProvider!.textThemeModel, textAlign: TextAlign.center, mainAxisAlignment: MainAxisAlignment.center);
+                },
                 child: Icon(
                   CupertinoIcons.text_aligncenter,
                   size: 30,
@@ -165,7 +170,9 @@ Future<dynamic> textThemeBottomSheet(
               ),
               CupertinoButton(
                 padding: EdgeInsets.zero,
-                onPressed: () {},
+                onPressed: () {
+                  userProvider!.changeTextAlignmentTo(value: userProvider!.textThemeModel, textAlign: TextAlign.right, mainAxisAlignment: MainAxisAlignment.end);
+                },
                 child: Icon(
                   CupertinoIcons.text_alignright,
                   size: 30,

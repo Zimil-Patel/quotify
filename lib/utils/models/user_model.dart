@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'dart:math';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
 import 'package:quotify/utils/models/quote_model.dart';
 import 'package:quotify/utils/models/text_theme_model.dart';
@@ -157,6 +158,17 @@ class UserProvider extends ChangeNotifier {
 
   void changeFontFamilyTo(TextThemeModel value, String fontFamily){
     value.fontFamily = fontFamily;
+    notifyListeners();
+  }
+
+  void changeFontColorTo(TextThemeModel value, Color fontColor){
+    value.fontColor = fontColor;
+    notifyListeners();
+  }
+
+  void changeTextAlignmentTo({required TextThemeModel value,required TextAlign textAlign,required MainAxisAlignment mainAxisAlignment}){
+    value.quoteTextAlign = textAlign;
+    value.authorTextAlign = mainAxisAlignment;
     notifyListeners();
   }
 }
