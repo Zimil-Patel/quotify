@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'package:flutter/widgets.dart';
 import 'package:quotify/utils/models/quote_model.dart';
+import 'package:quotify/utils/models/text_theme_model.dart';
 
 import '../global list/category_name_list.dart';
 import '../global list/quote_list.dart';
@@ -11,6 +12,7 @@ class UserProvider extends ChangeNotifier {
   String? name, email, password, gender;
   File? profileImage;
   int pageViewIndex = 0;
+  TextThemeModel textThemeModel = TextThemeModel();
 
   setPageViewIndex(int value){
     pageViewIndex = value;
@@ -150,6 +152,11 @@ class UserProvider extends ChangeNotifier {
     int quoteIndex = categories.indexOf(favouriteQuoteList![index].category!);
     categoryPriorities[quoteIndex] = -2;
     favouriteQuoteList!.removeAt(index);
+    notifyListeners();
+  }
+
+  void changeFontFamilyTo(TextThemeModel value, String fontFamily){
+    value.fontFamily = fontFamily;
     notifyListeners();
   }
 }

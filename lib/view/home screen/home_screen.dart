@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:icon_decoration/icon_decoration.dart';
 import 'package:outlined_text/models/outlined_text_stroke.dart';
 import 'package:outlined_text/outlined_text.dart';
@@ -27,15 +28,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    void toggle()
-    {
-      setState(() {
-      });
+    void toggle() {
+      setState(() {});
     }
+
     userProvider = Provider.of<UserProvider>(context, listen: true);
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
-    if(userProvider!.pageViewIndex == 0){
+    if (userProvider!.pageViewIndex == 0) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         _controller.jumpToPage(userProvider!.pageViewIndex);
       });
@@ -56,58 +56,75 @@ class _HomeScreenState extends State<HomeScreen> {
                   Container(
                     height: height,
                     width: width,
-                    decoration: userProvider!.globalQuoteList![userProvider!.pageViewIndex].isImage ?  BoxDecoration(
-                      image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage(userProvider!.globalQuoteList![index].image!),
-                      ),
-                    ) : BoxDecoration(
-                      color: userProvider!.globalQuoteList![userProvider!.pageViewIndex].color
-                    ),
+                    decoration: userProvider!
+                            .globalQuoteList![userProvider!.pageViewIndex]
+                            .isImage
+                        ? BoxDecoration(
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage(
+                                  userProvider!.globalQuoteList![index].image!),
+                            ),
+                          )
+                        : BoxDecoration(
+                            color: userProvider!
+                                .globalQuoteList![userProvider!.pageViewIndex]
+                                .color),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                      child: Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            OutlinedText(
-                              text: Text(
-                                userProvider!.globalQuoteList![index].quote!,
-                                style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                                  color: Colors.white
-                                ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          OutlinedText(
+                            text: Text(
+                              textAlign:
+                                  userProvider!.textThemeModel.quoteTextAlign,
+                              userProvider!.globalQuoteList![index].quote!,
+                              style: GoogleFonts.getFont(
+                                userProvider!.textThemeModel.fontFamily,
+                                textStyle: Theme.of(context)
+                                    .textTheme
+                                    .titleLarge!
+                                    .copyWith(
+                                        fontSize: 30,
+                                        color: userProvider!
+                                            .textThemeModel.fontColor),
                               ),
-                              strokes: [
-                                OutlinedTextStroke(
-                                    color: Colors.black,
-                                    width:2
+                            ),
+                            strokes: [
+                              OutlinedTextStroke(color: Colors.black, width: 2),
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 8.0),
+                            child: Row(
+                              mainAxisAlignment:
+                                  userProvider!.textThemeModel.authorTextAlign,
+                              children: [
+                                OutlinedText(
+                                  text: Text(
+                                    '${userProvider!.globalQuoteList![index].author! == '' ? '' : '-'} ${userProvider!.globalQuoteList![index].author!} ( ${userProvider!.globalQuoteList![index].category!} )',
+                                    style: GoogleFonts.getFont(
+                                      userProvider!.textThemeModel.fontFamily,
+                                      textStyle: Theme.of(context)
+                                          .textTheme
+                                          .bodySmall!
+                                          .copyWith(
+                                            fontSize: 16,
+                                            color: userProvider!
+                                                .textThemeModel.fontColor,
+                                          ),
+                                    ),
+                                  ),
+                                  strokes: [
+                                    OutlinedTextStroke(
+                                        color: Colors.black, width: 2),
+                                  ],
                                 ),
                               ],
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 8.0),
-                              child: OutlinedText(
-                                text: Text(
-                                  '${userProvider!.globalQuoteList![index].author! == '' ? '' : '-'} ${userProvider!.globalQuoteList![index].author!} - ${userProvider!.globalQuoteList![index].category!}',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodySmall!
-                                      .copyWith(
-                                    fontSize: 14,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                strokes: [
-                                  OutlinedTextStroke(
-                                      color: Colors.black,
-                                      width:2
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -127,8 +144,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: DecoratedIcon(
                                 icon: Icon(
                                   userProvider!.favouriteQuoteList!.contains(
-                                          userProvider!
-                                              .globalQuoteList![index])
+                                          userProvider!.globalQuoteList![index])
                                       ? CupertinoIcons.heart_fill
                                       : CupertinoIcons.heart,
                                   color: userProvider!.favouriteQuoteList!
@@ -138,7 +154,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                       : Colors.white,
                                   size: 40,
                                 ),
-                                decoration: IconDecoration(border: IconBorder(color:Colors.black,width: 1.5)),
+                                decoration: IconDecoration(
+                                    border: IconBorder(
+                                        color: Colors.black, width: 1.5)),
                               ),
                             ),
                             DecoratedIcon(
@@ -147,7 +165,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 color: Colors.white,
                                 size: 40,
                               ),
-                              decoration: IconDecoration(border: IconBorder(color:Colors.black,width: 1.5)),
+                              decoration: IconDecoration(
+                                  border: IconBorder(
+                                      color: Colors.black, width: 1.5)),
                             ),
                           ],
                         )),
@@ -169,11 +189,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   size: 40,
                   color: Colors.white,
                 ),
-                decoration: IconDecoration(border: IconBorder(color:Colors.black,width: 1.5)),
+                decoration: IconDecoration(
+                    border: IconBorder(color: Colors.black, width: 1.5)),
               ),
             ),
           ),
-          bottomNavigationBox(context: context,toggle: toggle),
+          bottomNavigationBox(context: context, toggle: toggle),
         ],
       ),
     );

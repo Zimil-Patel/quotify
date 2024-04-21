@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:quotify/utils/global_variables.dart';
+import 'package:quotify/utils/models/text_theme_model.dart';
 import 'package:quotify/utils/models/theme_model.dart';
 import 'package:quotify/utils/models/user_model.dart';
 import 'package:quotify/utils/theme/dark_theme.dart';
