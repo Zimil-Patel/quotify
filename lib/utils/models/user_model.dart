@@ -31,6 +31,7 @@ class UserProvider extends ChangeNotifier {
   List<QuoteModel>? favouriteQuoteList = [];
 
   List<QuoteModel> ownQuoteList = [];
+  List<QuoteModel> myCollectionList = [];
 
   List<int> categoryPriorities = [
     1,
@@ -182,6 +183,20 @@ class UserProvider extends ChangeNotifier {
 
   void removeFromOwnQuoteList({required int index}) {
     ownQuoteList.removeAt(index);
+    notifyListeners();
+  }
+
+  void showFavouriteQuotes() {
+    pageViewIndex = 0;
+    globalQuoteList!.clear();
+    globalQuoteList!.addAll(favouriteQuoteList!);
+    notifyListeners();
+  }
+
+  void showOwnQuotesList() {
+    pageViewIndex = 0;
+    globalQuoteList!.clear();
+    globalQuoteList!.addAll(ownQuoteList);
     notifyListeners();
   }
 }

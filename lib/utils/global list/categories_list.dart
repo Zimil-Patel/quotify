@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-List generalList = [
+List generalListOfCategory = [
   {
     'name': 'General',
     'icon': CupertinoIcons.circle,
