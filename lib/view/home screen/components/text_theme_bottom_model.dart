@@ -10,8 +10,8 @@ Future<dynamic> textThemeBottomSheet(
     BuildContext context, final VoidCallback toggle) {
   return showModalBottomSheet(
     context: context,
-    builder: (context) => Container(
-      height: height!/2,
+    builder: (context) => SizedBox(
+      height: height!/2.5,
       width: width,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,7 +21,7 @@ Future<dynamic> textThemeBottomSheet(
             child: Text(
               'Edit Your Text color',
               style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                  fontSize: 22, color: Theme.of(context).colorScheme.secondary),
+                  fontSize: 20, color: Theme.of(context).colorScheme.secondary),
             ),
           ),
           Padding(
@@ -31,7 +31,7 @@ Future<dynamic> textThemeBottomSheet(
                 child: Row(
                   children: List.generate(
                     Colorlist.length,
-                    (index) => InkWell(
+                        (index) => InkWell(
                       onTap: () {
                         toggle();
                         (index == 0)
@@ -39,7 +39,7 @@ Future<dynamic> textThemeBottomSheet(
                             context: context,
                             builder: (context) => AlertDialog(
                               title: const Text('Pick your color'),
-                              content: Container(
+                              content: SizedBox(
                                 height: height! / 1.5,
                                 width: width! / 1.5,
                                 child: ColorPicker(
@@ -62,19 +62,19 @@ Future<dynamic> textThemeBottomSheet(
                             : null;
                       },
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(2.0),
                         child: Container(
-                          height: height! / 13,
+                          height: height! / 16,
                           width: width!/6,
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
+                              shape: BoxShape.circle,
                               color: Colorlist[index]),
                           child: (index == 0)
-                              ? Icon(
-                                  Icons.add,
-                                  size: 35,
+                              ? const Icon(
+                            Icons.add,
+                            size: 30,
                             color: Colors.black,
-                                )
+                          )
                               : null,
                         ),
                       ),
@@ -87,7 +87,7 @@ Future<dynamic> textThemeBottomSheet(
             child: Text(
               'Edit Your Text family',
               style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                  fontSize: 22, color: Theme.of(context).colorScheme.secondary),
+                  fontSize: 20, color: Theme.of(context).colorScheme.secondary),
             ),
           ),
           SizedBox(
@@ -123,9 +123,9 @@ Future<dynamic> textThemeBottomSheet(
           Padding(
             padding: const EdgeInsets.only(top: 11.0, left: 20),
             child: Text(
-              'Edit Your Text alignament',
+              'Edit Your Text alignment',
               style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                  fontSize: 22, color: Theme.of(context).colorScheme.secondary),
+                  fontSize: 20, color: Theme.of(context).colorScheme.secondary),
             ),
           ),
           Padding(
@@ -134,31 +134,31 @@ Future<dynamic> textThemeBottomSheet(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 CupertinoButton(
+                  padding: EdgeInsets.zero,
+                  onPressed: () {},
                   child: Icon(
                     CupertinoIcons.text_alignleft,
                     size: 30,
                     color: Theme.of(context).colorScheme.secondary,
                   ),
-                  padding: EdgeInsets.zero,
-                  onPressed: () {},
                 ),
                 CupertinoButton(
+                  padding: EdgeInsets.zero,
+                  onPressed: () {},
                   child: Icon(
                     CupertinoIcons.text_aligncenter,
                     size: 30,
                     color: Theme.of(context).colorScheme.secondary,
                   ),
-                  padding: EdgeInsets.zero,
-                  onPressed: () {},
                 ),
                 CupertinoButton(
+                  padding: EdgeInsets.zero,
+                  onPressed: () {},
                   child: Icon(
                     CupertinoIcons.text_alignright,
                     size: 30,
                     color: Theme.of(context).colorScheme.secondary,
                   ),
-                  padding: EdgeInsets.zero,
-                  onPressed: () {},
                 ),
               ],
             ),
