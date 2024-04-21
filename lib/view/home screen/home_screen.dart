@@ -1,14 +1,22 @@
+import 'dart:io';
+import 'dart:typed_data';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:icon_decoration/icon_decoration.dart';
 import 'package:outlined_text/models/outlined_text_stroke.dart';
 import 'package:outlined_text/outlined_text.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:quotify/utils/global_variables.dart';
 import 'package:quotify/utils/models/user_model.dart';
+import 'package:quotify/view/share_screen.dart';
+import 'package:share_extend/share_extend.dart';
 import 'components/bottom_navigation.dart';
+import 'dart:ui' as ui;
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -159,15 +167,21 @@ class _HomeScreenState extends State<HomeScreen> {
                                         color: Colors.black, width: 1.5)),
                               ),
                             ),
-                            DecoratedIcon(
-                              icon: const Icon(
-                                CupertinoIcons.share,
-                                color: Colors.white,
-                                size: 40,
+                            CupertinoButton(
+                              padding: EdgeInsets.zero,
+                              onPressed: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => ShareScreen(),));
+                              },
+                              child: DecoratedIcon(
+                                icon: const Icon(
+                                  CupertinoIcons.share,
+                                  color: Colors.white,
+                                  size: 40,
+                                ),
+                                decoration: IconDecoration(
+                                    border: IconBorder(
+                                        color: Colors.black, width: 1.5)),
                               ),
-                              decoration: IconDecoration(
-                                  border: IconBorder(
-                                      color: Colors.black, width: 1.5)),
                             ),
                           ],
                         )),
@@ -206,6 +220,7 @@ class _HomeScreenState extends State<HomeScreen> {
     // WidgetsBinding.instance.addPostFrameCallback((_) {
     //   _controller.jumpToPage(userProvider!.pageViewIndex);
     // });
+    // userProvider!.generateKeys();
     _controller = PageController(
       initialPage: userProvider!.pageViewIndex,
       viewportFraction: 1.0,

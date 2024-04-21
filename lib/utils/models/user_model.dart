@@ -1,12 +1,8 @@
 import 'dart:io';
 import 'dart:math';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:quotify/utils/models/quote_model.dart';
 import 'package:quotify/utils/models/text_theme_model.dart';
-
 import '../global list/category_name_list.dart';
 import '../global list/quote_list.dart';
 
@@ -15,13 +11,12 @@ class UserProvider extends ChangeNotifier {
   File? profileImage;
   int pageViewIndex = 0;
   TextThemeModel textThemeModel = TextThemeModel();
+  GlobalKey imgKey = GlobalKey();
 
-  setPageViewIndex(int value){
+  setPageViewIndex(int value) {
     pageViewIndex = value;
     notifyListeners();
   }
-
-
 
   bool isForParticularCategories = false;
   String? selectedCategory = "Sad";
@@ -32,6 +27,8 @@ class UserProvider extends ChangeNotifier {
 
   List<QuoteModel> ownQuoteList = [];
   List<QuoteModel> myCollectionList = [];
+
+  Map<int, GlobalKey> boundaryKeys = {};
 
   List<int> categoryPriorities = [
     1,
@@ -58,7 +55,6 @@ class UserProvider extends ChangeNotifier {
 
   Map quoteLists = {};
 
-
   UserProvider() {
     int j = 0;
     for (String category in categories) {
@@ -72,13 +68,14 @@ class UserProvider extends ChangeNotifier {
     refreshGlobalQuoteListToRandom();
   }
 
-  refresh(){
+  refresh() {
     pageViewIndex = 0;
     refreshGlobalQuoteListToRandom();
+    // generateKeys();
     notifyListeners();
   }
 
-  refreshGlobalQuoteListToRandom(){
+  refreshGlobalQuoteListToRandom() {
     if (isForParticularCategories == false) {
       globalQuoteList!.clear();
       Random random = Random();
@@ -108,6 +105,7 @@ class UserProvider extends ChangeNotifier {
       globalQuoteList!.shuffle();
       print(globalQuoteList!.length);
     }
+    // generateKeys();
   }
 
   updateData() {
@@ -118,17 +116,18 @@ class UserProvider extends ChangeNotifier {
     globalQuoteList!.addAll(quoteLists[selectedCategory]);
     print(globalQuoteList);
     globalQuoteList!.shuffle();
+    // generateKeys();
     notifyListeners();
   }
 
   toggleFavourite(QuoteModel value) {
     int index = categories.indexOf(value.category!);
     print(index);
-    if(!favouriteQuoteList!.contains(value)){
-      if(categoryPriorities[index] < 20) categoryPriorities[index] += 2;
+    if (!favouriteQuoteList!.contains(value)) {
+      if (categoryPriorities[index] < 20) categoryPriorities[index] += 2;
       favouriteQuoteList!.add(value);
     } else {
-      if(categoryPriorities[index] > 4) categoryPriorities[index] -= 2;
+      if (categoryPriorities[index] > 4) categoryPriorities[index] -= 2;
       favouriteQuoteList!.remove(value);
     }
     print("${value.category} prio : ${categoryPriorities[index]}");
@@ -141,13 +140,13 @@ class UserProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  changeImage(QuoteModel value, String img){
+  changeImage(QuoteModel value, String img) {
     value.isImage = true;
     value.image = img;
     notifyListeners();
   }
 
-  changeImageToColor(QuoteModel value, Color color){
+  changeImageToColor(QuoteModel value, Color color) {
     value.isImage = false;
     value.color = color;
     notifyListeners();
@@ -160,24 +159,33 @@ class UserProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void changeFontFamilyTo(TextThemeModel value, String fontFamily){
+  void changeFontFamilyTo(TextThemeModel value, String fontFamily) {
     value.fontFamily = fontFamily;
     notifyListeners();
   }
 
-  void changeFontColorTo(TextThemeModel value, Color fontColor){
+  void changeFontColorTo(TextThemeModel value, Color fontColor) {
     value.fontColor = fontColor;
     notifyListeners();
   }
 
-  void changeTextAlignmentTo({required TextThemeModel value,required TextAlign textAlign,required MainAxisAlignment mainAxisAlignment}){
+  void changeTextAlignmentTo(
+      {required TextThemeModel value,
+      required TextAlign textAlign,
+      required MainAxisAlignment mainAxisAlignment}) {
     value.quoteTextAlign = textAlign;
     value.authorTextAlign = mainAxisAlignment;
     notifyListeners();
   }
 
-  void addQuote({required String quote, required String author}){
-    ownQuoteList.add(QuoteModel(isImage: false, color: Colors.grey, author: author, quote: quote, category: 'own'));
+  void addQuote({required String quote, required String author}) {
+    ownQuoteList.add(QuoteModel(
+        isImage: false,
+        image: '',
+        color: Colors.grey,
+        author: author,
+        quote: quote,
+        category: 'own'));
     notifyListeners();
   }
 
@@ -199,4 +207,11 @@ class UserProvider extends ChangeNotifier {
     globalQuoteList!.addAll(ownQuoteList);
     notifyListeners();
   }
+  // void generateKeys() {
+  //   boundaryKeys.clear();
+  //   for (int i = 0; i < globalQuoteList!.length; i++) {
+  //     boundaryKeys[i] = GlobalKey();
+  //   }
+  // }
+
 }
