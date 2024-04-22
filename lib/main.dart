@@ -44,7 +44,7 @@ class QuotifyApp extends StatelessWidget {
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: themeProvider!.getThemeMode(),
-      home: const HomeScreen(),
+      home: const IntroScreen(),
     );
   }
 }
