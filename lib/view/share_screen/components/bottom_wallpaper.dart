@@ -18,21 +18,20 @@ Future<dynamic> wallpaper(BuildContext context) {
     builder: (context) => SizedBox(
       height: height! / 4.5,
       width: width,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0, bottom: 5, left: 20),
-            child: Text('Wallpaper',style:  Theme.of(context).textTheme.titleSmall!.copyWith(
-                fontSize: 20, color: Theme.of(context).colorScheme.secondary),),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Divider(),
-          ),
-          SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: Column(
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0, bottom: 5, left: 20),
+              child: Text('Wallpaper',style:  Theme.of(context).textTheme.titleSmall!.copyWith(
+                  fontSize: 20, color: Theme.of(context).colorScheme.secondary),),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Divider(),
+            ),
+            Column(
               children: List.generate(
                 wallpaperlist.length,
                     (index) => CupertinoButton(
@@ -51,22 +50,22 @@ Future<dynamic> wallpaper(BuildContext context) {
                   onPressed: () async {
                     final boudary = userProvider!.imgKey.currentContext!
                         .findRenderObject() as RenderRepaintBoundary;
-
+            
                     ui.Image image = await boudary.toImage();
-
+            
                     ByteData? byteData =
                     await image.toByteData(format: ui.ImageByteFormat.png);
-
+            
                     final imgData = byteData!.buffer.asUint8List();
-
+            
                     final directory = await getApplicationDocumentsDirectory();
-
+            
                     fileImg = File(
                         "${directory.path}/flutter/${DateTime.now().millisecondsSinceEpoch}.png");
                     fileImg!.createSync(recursive: true);
-
+            
                     fileImg!.writeAsBytesSync(imgData);
-
+            
                     if (index == 0) {
                       lockscreen(context);
                     } else if (index == 1) {
@@ -77,9 +76,9 @@ Future<dynamic> wallpaper(BuildContext context) {
                   },
                 ),
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     ),
   );
