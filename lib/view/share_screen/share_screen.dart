@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'dart:typed_data';
-import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,8 +13,9 @@ import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:share_extend/share_extend.dart';
 import 'dart:ui' as ui;
-import '../utils/global_variables.dart';
-import '../utils/models/user_model.dart';
+import '../../utils/global_variables.dart';
+import '../../utils/models/user_model.dart';
+import 'components/bottom_wallpaper.dart';
 
 File? fileImg;
 
@@ -39,7 +39,8 @@ class ShareScreen extends StatelessWidget {
                       image: DecorationImage(
                         fit: BoxFit.cover,
                         image: AssetImage(userProvider!
-                            .globalQuoteList![userProvider!.pageViewIndex].image!),
+                            .globalQuoteList![userProvider!.pageViewIndex]
+                            .image!),
                       ),
                     )
                   : BoxDecoration(
@@ -54,7 +55,8 @@ class ShareScreen extends StatelessWidget {
                       text: Text(
                         textAlign: userProvider!.textThemeModel.quoteTextAlign,
                         userProvider!
-                            .globalQuoteList![userProvider!.pageViewIndex].quote!,
+                            .globalQuoteList![userProvider!.pageViewIndex]
+                            .quote!,
                         style: GoogleFonts.getFont(
                           userProvider!.textThemeModel.fontFamily,
                           textStyle: Theme.of(context)
@@ -62,7 +64,8 @@ class ShareScreen extends StatelessWidget {
                               .titleLarge!
                               .copyWith(
                                   fontSize: 30,
-                                  color: userProvider!.textThemeModel.fontColor),
+                                  color:
+                                      userProvider!.textThemeModel.fontColor),
                         ),
                       ),
                       strokes: [
@@ -85,7 +88,8 @@ class ShareScreen extends StatelessWidget {
                                     .bodySmall!
                                     .copyWith(
                                       fontSize: 16,
-                                      color: userProvider!.textThemeModel.fontColor,
+                                      color: userProvider!
+                                          .textThemeModel.fontColor,
                                     ),
                               ),
                             ),
@@ -118,8 +122,6 @@ class ShareScreen extends StatelessWidget {
               ),
             ),
           ),
-
-
           Padding(
             padding: const EdgeInsets.only(bottom: 60),
             child: Align(
@@ -130,13 +132,13 @@ class ShareScreen extends StatelessWidget {
                     CupertinoButton(
                       padding: EdgeInsets.zero,
                       onPressed: () async {
-                        final boudary =
-                        userProvider!.imgKey.currentContext!.findRenderObject() as RenderRepaintBoundary;
+                        final boudary = userProvider!.imgKey.currentContext!
+                            .findRenderObject() as RenderRepaintBoundary;
 
                         ui.Image image = await boudary.toImage();
 
-                        ByteData? byteData =
-                            await image.toByteData(format: ui.ImageByteFormat.png);
+                        ByteData? byteData = await image.toByteData(
+                            format: ui.ImageByteFormat.png);
 
                         final imgData = byteData!.buffer.asUint8List();
 
@@ -153,24 +155,40 @@ class ShareScreen extends StatelessWidget {
                           color: Colors.white,
                         ),
                         decoration: IconDecoration(
-                            border: IconBorder(
-                                color: Colors.black, width: 1.5)),
+                            border:
+                                IconBorder(color: Colors.black, width: 1.5)),
                       ),
+                    ),
+                    CupertinoButton(
+                      child: DecoratedIcon(
+                        icon: Icon(
+                          CupertinoIcons.photo,
+                          size: 40,
+                          color: Colors.white,
+                        ),
+                        decoration: IconDecoration(
+                            border:
+                                IconBorder(color: Colors.black, width: 1.5)),
+                      ),
+                      onPressed: () {
+                        wallpaper(context);
+                      },
                     ),
                     CupertinoButton(
                       padding: EdgeInsets.zero,
                       onPressed: () async {
-                        final boudary =
-                        userProvider!.imgKey.currentContext!.findRenderObject() as RenderRepaintBoundary;
+                        final boudary = userProvider!.imgKey.currentContext!
+                            .findRenderObject() as RenderRepaintBoundary;
 
                         ui.Image image = await boudary.toImage();
 
-                        ByteData? byteData =
-                            await image.toByteData(format: ui.ImageByteFormat.png);
+                        ByteData? byteData = await image.toByteData(
+                            format: ui.ImageByteFormat.png);
 
                         final imgData = byteData!.buffer.asUint8List();
 
-                        final directory = await getApplicationDocumentsDirectory();
+                        final directory =
+                            await getApplicationDocumentsDirectory();
 
                         fileImg = File(
                             "${directory.path}/flutter/${DateTime.now().millisecondsSinceEpoch}.png");
@@ -187,8 +205,8 @@ class ShareScreen extends StatelessWidget {
                           size: 40,
                         ),
                         decoration: IconDecoration(
-                            border: IconBorder(
-                                color: Colors.black, width: 1.5)),
+                            border:
+                                IconBorder(color: Colors.black, width: 1.5)),
                       ),
                     ),
                   ],
@@ -199,4 +217,5 @@ class ShareScreen extends StatelessWidget {
     );
   }
 }
+
 
