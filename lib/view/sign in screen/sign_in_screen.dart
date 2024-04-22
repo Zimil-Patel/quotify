@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:quotify/view/home%20screen/home_screen.dart';
 import '../../utils/global_variables.dart';
+import 'components/continue_as_guest.dart';
 import 'components/sign_in_button.dart';
 import 'components/sign_in_text_filed_column.dart';
 import 'components/sign_in_top_stuff.dart';
@@ -36,6 +38,8 @@ class _SignInScreenState extends State<SignInScreen> {
 
                 //SIGNUP TEXT BUTTON
                 signUpTextButton(context: context),
+                
+                continueAsGuestTextButton(context: context),
               ],
             ),
           ),
@@ -43,4 +47,6 @@ class _SignInScreenState extends State<SignInScreen> {
       ),
     );
   }
+
+
 }

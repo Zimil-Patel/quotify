@@ -49,6 +49,7 @@ void verifyAndLogin(BuildContext context) {
     if (pass == users[foundAt]['pass']) {
       currentUser = foundAt;
       clearField();
+      isLoggedIn = true;
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen(),));
     } else {
       SnackBar snackBar = SnackBar(

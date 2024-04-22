@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../utils/global_variables.dart';
+import '../sign in screen/components/continue_as_guest.dart';
 import 'components/sign_in_text_button.dart';
 import 'components/sign_up_button.dart';
 import 'components/sign_up_text_field_column.dart';
@@ -39,6 +40,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                   //SIGN IN TEXT BUTTON
                   signInTextButton(context: context),
+
+                  continueAsGuestTextButton(context: context),
+
                 ],
               ),
             ),

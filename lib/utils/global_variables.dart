@@ -32,6 +32,7 @@ ThemeProvider? themeProvider;
 List users = [];
 int userLen = 0;
 int currentUser = 0;
+bool isLoggedIn = false;
 
 
 //CLEAR FIELDS
