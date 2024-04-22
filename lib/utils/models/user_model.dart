@@ -225,4 +225,11 @@ class UserProvider extends ChangeNotifier {
 
     return '${randomQuote.quote} - ${randomQuote.author}';
   }
+
+  void increasePriority(QuoteModel value){
+    int index = categories.indexOf(value.category!);
+    if (categoryPriorities[index] < 20) categoryPriorities[index] += 2;
+    print("${value.category} prio : ${categoryPriorities[index]}");
+    notifyListeners();
+  }
 }

@@ -172,6 +172,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             CupertinoButton(
                               padding: EdgeInsets.zero,
                               onPressed: () {
+                                userProvider!.increasePriority(userProvider!.globalQuoteList![userProvider!.pageViewIndex]);
                                 Navigator.push(context, MaterialPageRoute(builder: (context) => ShareScreen(),));
                               },
                               child: DecoratedIcon(
