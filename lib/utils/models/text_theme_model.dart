@@ -8,5 +8,4 @@ class TextThemeModel extends ChangeNotifier{
   TextAlign quoteTextAlign = TextAlign.start;
   MainAxisAlignment authorTextAlign = MainAxisAlignment.start;
 
-
 }

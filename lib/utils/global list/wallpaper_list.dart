@@ -1,0 +1,1 @@
+List wallpaperlist = ['Home screen', 'Lock screen', 'Both screen'];

@@ -9,6 +9,7 @@ import 'package:quotify/utils/theme/dark_theme.dart';
 import 'package:quotify/utils/theme/light_theme.dart';
 import 'package:quotify/view/home%20screen/home_screen.dart';
 import 'package:quotify/view/intro%20screen/intro_screen.dart';
+import 'package:quotify/view/profile%20screen/general%20screen/person%20details/person_details_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,7 +44,7 @@ class QuotifyApp extends StatelessWidget {
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: themeProvider!.getThemeMode(),
-      home: const IntroScreen(),
+      home: const HomeScreen(),
     );
   }
 }

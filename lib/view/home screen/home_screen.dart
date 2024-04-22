@@ -13,7 +13,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:quotify/utils/global_variables.dart';
 import 'package:quotify/utils/models/user_model.dart';
-import 'package:quotify/view/share_screen.dart';
+import 'package:quotify/view/share_screen/share_screen.dart';
 import 'package:share_extend/share_extend.dart';
 import 'components/bottom_navigation.dart';
 import 'dart:ui' as ui;

@@ -45,6 +45,7 @@ dependencies:
   path_provider: any
   image_gallery_saver: any
   image_picker: any
+  async_wallpaper: ^2.0.3
 
 dev_dependencies:
   flutter_test:
