@@ -111,6 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               children: [
                                 OutlinedText(
                                   text: Text(
+                                    overflow: TextOverflow.ellipsis,
                                     '${userProvider!.globalQuoteList![index].author! == '' ? '' : '-'} ${userProvider!.globalQuoteList![index].author!} ( ${userProvider!.globalQuoteList![index].category!} )',
                                     style: GoogleFonts.getFont(
                                       userProvider!.textThemeModel.fontFamily,

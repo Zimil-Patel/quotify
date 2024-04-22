@@ -1,5 +1,8 @@
 PODS:
   - Flutter (1.0.0)
+  - fluttertoast (0.0.2):
+    - Flutter
+    - Toast
   - image_gallery_saver (2.0.2):
     - Flutter
   - image_picker_ios (0.0.1):
@@ -9,17 +12,25 @@ PODS:
     - FlutterMacOS
   - share_extend (0.0.1):
     - Flutter
+  - Toast (4.1.0)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
+  - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
   - image_gallery_saver (from `.symlinks/plugins/image_gallery_saver/ios`)
   - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
   - share_extend (from `.symlinks/plugins/share_extend/ios`)
 
+SPEC REPOS:
+  trunk:
+    - Toast
+
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
+  fluttertoast:
+    :path: ".symlinks/plugins/fluttertoast/ios"
   image_gallery_saver:
     :path: ".symlinks/plugins/image_gallery_saver/ios"
   image_picker_ios:
@@ -31,10 +42,12 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  fluttertoast: 9f2f8e81bb5ce18facb9748d7855bf5a756fe3db
   image_gallery_saver: cb43cc43141711190510e92c460eb1655cd343cb
   image_picker_ios: b545a5f16c0fa88e3ecbbce3ed4de45567a8ec18
   path_provider_foundation: 3784922295ac71e43754bd15e0653ccfd36a147c
   share_extend: b6748dc53695587891126a89533b862b92548c7b
+  Toast: ec33c32b8688982cecc6348adeae667c1b9938da
 
 PODFILE CHECKSUM: 819463e6a0290f5a72f145ba7cde16e8b6ef0796
 

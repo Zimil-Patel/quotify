@@ -7,7 +7,7 @@ continueAsGuestTextButton({required BuildContext context}) {
   return Center(child: TextButton(onPressed: (){
     isLoggedIn = false;
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen(),));
-  }, child: Text('Continue AS Guest', style: Theme.of(context).textTheme.titleSmall!.copyWith(
+  }, child: Text('Continue As Guest', style: Theme.of(context).textTheme.titleSmall!.copyWith(
     fontWeight: FontWeight.bold,
   ),)));
 }
