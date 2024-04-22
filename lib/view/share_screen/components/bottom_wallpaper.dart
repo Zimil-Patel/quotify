@@ -16,7 +16,7 @@ Future<dynamic> wallpaper(BuildContext context) {
   return showModalBottomSheet(
     context: context,
     builder: (context) => SizedBox(
-      height: height! / 2.5,
+      height: height! / 2.3,
       width: width,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
