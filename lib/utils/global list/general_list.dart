@@ -12,7 +12,7 @@ List generalList=[
     'icon':CupertinoIcons.speaker_slash,
   },
   {
-    'name':'Change name',
+    'name':'Profile',
     'icon':CupertinoIcons.person,
   },
   {
@@ -29,13 +29,6 @@ List generalList=[
   },
 ];
 
-// Accounts
-List generalList1=[
-  {
-    'name':'Log out',
-    'icon':CupertinoIcons.person_add,
-  },
-];
 
 //Supports us
 List generalList2=[

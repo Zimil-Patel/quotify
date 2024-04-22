@@ -214,4 +214,15 @@ class UserProvider extends ChangeNotifier {
   //   }
   // }
 
+  String getRandomQuoteFromAllCategories() {
+    Random random = Random();
+
+    String category = categories[random.nextInt(categories.length)];
+
+    List<QuoteModel> categoryQuotes = quoteLists[category];
+
+    QuoteModel randomQuote = categoryQuotes[random.nextInt(categoryQuotes.length)];
+
+    return '${randomQuote.quote} - ${randomQuote.author}';
+  }
 }

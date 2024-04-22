@@ -34,6 +34,9 @@ int userLen = 0;
 int currentUser = 0;
 bool isLoggedIn = false;
 
+//day of the quote displayed
+bool isDayOfQuoteDisplayed = false;
+
 
 //CLEAR FIELDS
 void clearField(){

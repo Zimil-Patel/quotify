@@ -28,8 +28,8 @@ class _PersonDetailsScreenState extends State<PersonDetailsScreen> {
                 child: CircleAvatar(
                   backgroundColor: Theme.of(context).colorScheme.secondary,
                   radius: 70,
-                  backgroundImage: (imgparth != null)
-                      ? FileImage(imgparth!)
+                  backgroundImage: (users[currentUser]['img'] != null)
+                      ? FileImage(users[currentUser]['img']!)
                       : null,
                 ),
               ),
@@ -38,7 +38,7 @@ class _PersonDetailsScreenState extends State<PersonDetailsScreen> {
                 left: 105,
                 child: CupertinoButton(
                   onPressed: () {
-                    setimage();
+                    setImage();
                     setState(() {});
                   },
                   child: Center(
@@ -75,7 +75,7 @@ class _PersonDetailsScreenState extends State<PersonDetailsScreen> {
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
                 Text(
-                  'Akshar patel',
+                  users[currentUser]['name'],
                   style: Theme.of(context).textTheme.titleSmall,
                 ),
               ],
@@ -94,7 +94,7 @@ class _PersonDetailsScreenState extends State<PersonDetailsScreen> {
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
                 Text(
-                  'akshar@gmail.com',
+                  users[currentUser]['email'],
                   style: Theme.of(context).textTheme.titleSmall,
                 ),
               ],
@@ -104,15 +104,12 @@ class _PersonDetailsScreenState extends State<PersonDetailsScreen> {
       ) ,
     );
   }
-  void setimage() async {
+  void setImage() async {
     XFile? image = await imagePicker.pickImage(source: ImageSource.gallery);
     setState(() {
-      imgparth = File(image!.path);
+      users[currentUser]['img'] = File(image!.path);
     });
   }
 }
 
-
-
 ImagePicker imagePicker = ImagePicker();
-File? imgparth;

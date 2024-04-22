@@ -13,6 +13,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:quotify/utils/global_variables.dart';
 import 'package:quotify/utils/models/user_model.dart';
+import 'package:quotify/view/home%20screen/components/quote_of_day_dialogue.dart';
 import 'package:quotify/view/share_screen/share_screen.dart';
 import 'package:share_extend/share_extend.dart';
 import 'components/bottom_navigation.dart';
@@ -39,7 +40,6 @@ class _HomeScreenState extends State<HomeScreen> {
     void toggle() {
       setState(() {});
     }
-
     userProvider = Provider.of<UserProvider>(context, listen: true);
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
@@ -48,6 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
         _controller.jumpToPage(userProvider!.pageViewIndex);
       });
     }
+
     return Scaffold(
       body: Stack(
         children: [
@@ -222,6 +223,15 @@ class _HomeScreenState extends State<HomeScreen> {
     //   _controller.jumpToPage(userProvider!.pageViewIndex);
     // });
     // userProvider!.generateKeys();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!isDayOfQuoteDisplayed) {
+        isDayOfQuoteDisplayed = true;
+        showQuoteDayAlertDialog(
+          context,
+          userProvider!.getRandomQuoteFromAllCategories()
+        );
+      }
+    });
     _controller = PageController(
       initialPage: userProvider!.pageViewIndex,
       viewportFraction: 1.0,

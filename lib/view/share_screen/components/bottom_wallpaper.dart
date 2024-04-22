@@ -39,9 +39,6 @@ Future<dynamic> wallpaper(BuildContext context) {
                   padding: EdgeInsets.symmetric(horizontal: 10),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    border: Border.all(
-                        color: Theme.of(context).colorScheme.secondary),
-                    borderRadius: BorderRadius.circular(5),
                     color: Theme.of(context).colorScheme.surface,
                   ),
                   child: Text(wallpaperlist[index],style: Theme.of(context).textTheme.titleMedium,),
