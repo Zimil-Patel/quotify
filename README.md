@@ -12,45 +12,45 @@ A new Flutter project.
 <img src = "https://github.com/Zimil-Patel/quotify/blob/master/lightThemeSnaps/img2.png" width = "200">&nbsp;&nbsp; &nbsp;&nbsp;
 <img src = "https://github.com/Zimil-Patel/quotify/blob/master/lightThemeSnaps/img3.png" width = "200">&nbsp;&nbsp; &nbsp;&nbsp;
 <img src = "https://github.com/Zimil-Patel/quotify/blob/master/lightThemeSnaps/img4.png" width = "200">&nbsp;&nbsp; &nbsp;&nbsp;
-</p>
 
-<p>
+
+
 <img src = "https://github.com/Zimil-Patel/quotify/blob/master/lightThemeSnaps/img5.png" width = "200">&nbsp;&nbsp;&nbsp;&nbsp; 
 <img src = "https://github.com/Zimil-Patel/quotify/blob/master/lightThemeSnaps/img6.png" width = "200">&nbsp;&nbsp;&nbsp;&nbsp;
 <img src = "https://github.com/Zimil-Patel/quotify/blob/master/lightThemeSnaps/img7.png" width = "200">&nbsp;&nbsp;&nbsp;&nbsp; 
 <img src = "https://github.com/Zimil-Patel/quotify/blob/master/lightThemeSnaps/img8.png" width = "200">&nbsp;&nbsp;&nbsp;&nbsp; 
-</p>
 
-<p>
+
+
 <img src = "https://github.com/Zimil-Patel/quotify/blob/master/lightThemeSnaps/img9.png" width = "200">&nbsp;&nbsp;&nbsp;&nbsp;
 <img src = "https://github.com/Zimil-Patel/quotify/blob/master/lightThemeSnaps/img10.png" width = "200">&nbsp;&nbsp;&nbsp;&nbsp; 
 <img src = "https://github.com/Zimil-Patel/quotify/blob/master/lightThemeSnaps/img11.png" width = "200">&nbsp;&nbsp;&nbsp;&nbsp; 
 <img src = "https://github.com/Zimil-Patel/quotify/blob/master/lightThemeSnaps/img12.png" width = "200">&nbsp;&nbsp;&nbsp;&nbsp; 
-</p>
 
-<p>
+
+
 <img src = "https://github.com/Zimil-Patel/quotify/blob/master/lightThemeSnaps/img13.png" width = "200">&nbsp;&nbsp;&nbsp;&nbsp;  
 <img src = "https://github.com/Zimil-Patel/quotify/blob/master/lightThemeSnaps/img14.png" width = "200">&nbsp;&nbsp;&nbsp;&nbsp; 
 <img src = "https://github.com/Zimil-Patel/quotify/blob/master/lightThemeSnaps/img15.png" width = "200">&nbsp;&nbsp;&nbsp;&nbsp; 
 <img src = "https://github.com/Zimil-Patel/quotify/blob/master/lightThemeSnaps/img16.png" width = "200">&nbsp;&nbsp;&nbsp;&nbsp; 
-</p>
 
 
-<p>
+
+
 <img src = "https://github.com/Zimil-Patel/quotify/blob/master/lightThemeSnaps/img17.png" width = "200">&nbsp;&nbsp;&nbsp;&nbsp;
 <img src = "https://github.com/Zimil-Patel/quotify/blob/master/lightThemeSnaps/img18.png" width = "200">&nbsp;&nbsp;&nbsp;&nbsp; 
 <img src = "https://github.com/Zimil-Patel/quotify/blob/master/lightThemeSnaps/img19.png" width = "200">&nbsp;&nbsp;&nbsp;&nbsp; 
 <img src = "https://github.com/Zimil-Patel/quotify/blob/master/lightThemeSnaps/img20.png" width = "200">&nbsp;&nbsp;&nbsp;&nbsp; 
-</p>
 
-<p>
+
+
 <img src = "https://github.com/Zimil-Patel/quotify/blob/master/lightThemeSnaps/img21.png" width = "200">&nbsp;&nbsp;&nbsp;&nbsp;
 <img src = "https://github.com/Zimil-Patel/quotify/blob/master/lightThemeSnaps/img22.png" width = "200">&nbsp;&nbsp;&nbsp;&nbsp; 
 <img src = "https://github.com/Zimil-Patel/quotify/blob/master/lightThemeSnaps/img23.png" width = "200">&nbsp;&nbsp;&nbsp;&nbsp;
 <img src = "https://github.com/Zimil-Patel/quotify/blob/master/lightThemeSnaps/img24.png" width = "200">&nbsp;&nbsp;&nbsp;&nbsp; 
-</p>
 
-<p>
+
+
 <img src = "https://github.com/Zimil-Patel/quotify/blob/master/lightThemeSnaps/img25.png" width = "200">&nbsp;&nbsp;&nbsp;&nbsp;  
 <img src = "https://github.com/Zimil-Patel/quotify/blob/master/lightThemeSnaps/img26.png" width = "200">&nbsp;&nbsp;&nbsp;&nbsp; 
 </p>
